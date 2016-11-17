@@ -1,0 +1,100 @@
+<ion-view style = 'display:flex; height:100%; flex-direction:column; flex-flow:column;' id = 'transaction_detail_edit_page'>
+    <ion-header-bar style = ''>
+        <div class = 'buttons'>
+            <button id = 'back_button' class = 'create_account'  style = 'font-size:16px; border:0px solid white; background:none; color:#60c1cc;'>Back</button>
+        </div>
+        <div class = 'title'>
+            Transactions
+        </div>
+        <div class = 'buttons'>
+            <button id = 'delete_button' class = 'create_account'  style = 'font-size:16px; border:0px solid white; background:none; color:#60c1cc'>Delete</button>
+        </div>
+    </ion-header-bar>
+    <ion-content  has-bouncing='false' scroll = 'true'>
+
+        <img class = 'text_line_absolute centerx_area' style = 'display:none; left:50%; top:40px; width:100px; height:100px; border-radius:50px; border:2px solid rgb(230,230,230);'
+                ng-src = '{{getCategoryIcon(transaction.category[0])}}'>
+
+
+
+        <div id="jssor_2" style="position: relative; margin: 0; top: 35px; left: 0; width:100%; height: 111px;  ">
+
+            <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1125px; height: 111px; overflow: hidden;">
+                <!--<div data-p="112.50" style="display: none;" class = 'category_icon_in_transaction_edit'>-->
+
+                <!--</div>-->
+                <div style="display: none;" class = 'category_icon_in_transaction_edit' data-vvv = 'Food and Drink'>
+                    <img data-u="image" ng-src="{{getCategoryIcon('Food and Drink')}}" />
+                </div>
+                <div  style="display: none;" class = 'category_icon_in_transaction_edit'  data-vvv = 'Travel'>
+                    <img data-u="image" ng-src="{{getCategoryIcon('Travel')}}" />
+                </div>
+                <div  style="display: none;" class = 'category_icon_in_transaction_edit'  data-vvv = 'Shops'>
+                    <img data-u="image" ng-src="{{getCategoryIcon('Shops')}}" />
+                </div>
+                <div  style="display: none;" class = 'category_icon_in_transaction_edit'  data-vvv = 'Other'>
+                    <img data-u="image" ng-src="{{getCategoryIcon('Other')}}" />
+                </div>
+                <!--<div data-p="112.50" style="display: none;" class = 'category_icon_in_transaction_edit'>-->
+
+                <!--</div>-->
+
+
+            </div>
+
+
+        </div>
+        <div class = 'text_line_absolute centerx_area' id = 'transaction_keypad'
+               style = "padding-left:30px; font-family: AvenirNext-Medium; font-size:35px; left:50%; top:160px; color:rgb(29,29,29);">
+            <span ng-bind = 'getAmountValue(number)' id = 'price' style = 'color:rgb(50,50,50)'></span>
+            <img src = 'img/assets/numkeypad.png'  style = 'width:20px; height:29px; margin-top:3px; margin-left:10px'></div>
+
+        <div class = 'text_line_absolute' style = 'top:210px; width:100%; left:0px'>
+            <div class="form_item">
+                <div class = 'label'>MERCHANT</div>
+                <input type="text" placeholder="" id = 'where'  ng-model="where">
+            </div>
+            <label class="item item-input item-stacked-label"  style = 'margin-left:25px; width:calc(100% - 50px); margin-top:30px; padding:0px; border:0px solid white; border-bottom: 1px solid #dddddd;'>
+                <span class="input-label" style = 'text-align:left; font-size:10px;  width:100%;  text-align:left;  font-family:AvenirNext-Regular;  color:rgb(29,29,29);  opacity:0.5; max-width:100%;'>WHEN</span>
+                <input type="date" placeholder="" id = 'when' ng-model = 'when' style = 'color:rgb(50,50,50)'>
+            </label>
+
+            <div  class="form_item">
+                <div class = 'label'>ACCOUNT</div>
+                <input type="text" placeholder="" id = 'account' readonly  ng-model="account" style = 'color:#aaa'>
+            </div>
+            <div style = 'height:70px; width:100%'></div>
+        </div>
+
+
+        <button style ='position:absolute; top:545px;  height:60px; width:100%; font-size:12px; font-family:AvenirNext-Regular; background:rgb(153,221,221); color:white; font-weight:normal; letter-spacing:1px' class = 'bottom_button' id = 'update_this_transaction'
+                ng-click = "updateTrans()">
+            UPDATE
+        </button>
+    </ion-content>
+
+
+    <!--<div id = 'empty_area_for_keyboard' style = 'display:none; position:absolute; left:0; top:0; width:100%; height:calc(100% - 300px);'>-->
+
+    <!--</div>-->
+    <!--<div id = 'transaction_keyboard' style = 'display:none; padding-left:10%;padding-right:10%;'>-->
+
+        <!--<div class = 'key_cell' data-value="1">1</div>-->
+        <!--<div class = 'key_cell' data-value="2">2</div>-->
+        <!--<div class = 'key_cell' data-value="3">3</div>-->
+        <!--<div class = 'key_cell' data-value="4">4</div>-->
+        <!--<div class = 'key_cell' data-value="5">5</div>-->
+        <!--<div class = 'key_cell' data-value="6">6</div>-->
+        <!--<div class = 'key_cell' data-value="7">7</div>-->
+        <!--<div class = 'key_cell' data-value="8">8</div>-->
+        <!--<div class = 'key_cell' data-value="9">9</div>-->
+        <!--<div class = 'key_cell' data-value=".">.</div>-->
+        <!--<div class = 'key_cell' data-value="0">0</div>-->
+        <!--<div class = 'key_cell' data-value=","><img src = 'img/assets/backkey.png' style = 'width:50px' class = 'center_area'></div>-->
+        <!--<div style = 'width:150%; margin-left:-25%; float:left; height:20%'>-->
+            <!--<button style = 'width:100%;  background:white; height:100%; color:#777' id = 'transaction_editing_done'>OK</button>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <ion-numeric-keyboard options="options"></ion-numeric-keyboard>
+</ion-view>

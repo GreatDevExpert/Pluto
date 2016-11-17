@@ -1,0 +1,44 @@
+<ion-side-menus enable-menu-with-back-views = "true">
+
+  <ion-pane ion-side-menu-content drag-content="false">
+    <ion-nav-bar class="bar-stable">
+
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+  </ion-pane>
+
+  <ion-side-menu side="left" enable-menu-with-back-views = 'true'>
+    <header class="bar bar-header bar-stable">
+      <img src = 'img/ionic.png' style = 'height:50px; border-radius:25px; top: 40%; left:40px;' class = 'center_area'>
+      <div style = 'position:absolute; font-family:AvenirNext-Regular; font-size:16px;top:20px; left:80px;' id = 'side_menu_user_name'>Will Power</div>
+      <div style = 'position:absolute; font-family:AvenirNext-Regular; font-size:13px;top:43px; left:80px;' id = 'side_menu_email_address'>willpower@gopluto.io</div>
+    </header>
+    <ion-content class="has-header" scroll="false">
+      <ion-list>
+        <ion-item  class = 'item-borderless'  menu-toggle ng-click = 'goTo("menu.challenge_detail");'>
+          Challenges
+        </ion-item>
+        <ion-item class = 'item-borderless'  menu-toggle ng-click = 'goTo("menu.goal_list")'>
+          Goals
+        </ion-item>
+        <ion-item class = 'item-borderless'  menu-close  ng-click = 'goTo("menu.transactions");'>
+          Transactions
+        </ion-item>
+        <ion-item class = 'item-borderless' menu-close ng-click = 'goTo("menu.accounts")'>
+          Accounts
+        </ion-item>
+        <ion-item class = 'item-borderless' menu-toggle>
+          Settings
+        </ion-item>
+      </ion-list>
+      <button style = 'position:absolute;
+              bottom:0px; height:50px; 
+              background:rgb(200,200,200); color:rgb(29,29,29); 
+              font-family:AvenirNext-Regular; width:100%; font-size:13px;
+              border:0px solid black;'
+          ng-click = 'onSignOut();'>
+              Sign Out
+      </button>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

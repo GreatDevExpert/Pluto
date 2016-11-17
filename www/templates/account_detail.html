@@ -1,0 +1,70 @@
+<ion-view id = 'account_detail'>
+	<ion-header-bar style = ''>
+
+		<div class = 'buttons'>
+			<button id = 'back_button'  style = 'background:white; border:0px solid red; font-size:16px; color:rgb(153,221,221)'>Back</button>
+		</div>
+		<div class = 'title' id = 'view_title'>
+			Account Detail
+		</div>
+
+		<div class = 'buttons'>
+			<button id = 'unlink_button'  style = 'background:white; border:0px solid red; font-size:16px; color:rgb(153,221,221)'>Unlink</button>
+		</div>
+	</ion-header-bar>
+	<ion-content scroll = 'true' has-bouncing='false' class = 'has-header'>
+		<div id = 'linked_accounts' style = 'width:100%; height:50px; position:relative; background:#eee; font-family:AvenirNext-Medium; line-height:56px; padding-left:20px; font-size:14px; color:rgb(150,150,150);'>
+			OVERVIEW
+		</div>
+		<DIV style = 'height:230px; width:100%; left:0; top:50px'>
+			<div class = 'text_line_absolute no-transform' style = 'top:90px; width:100%; left:0px; color:rgb(29,29,29); opacity:0.5; font-family:AvenirNext-Regular; font-size:10px; letter-spacing:1px'>TOTAL BALANCE</div>
+			<div class = 'text_line_absolute no-transform' style = 'top:130px; width:100%; left:0px; color:rgb(29,29,29); opacity:1; font-family:AvenirNext-Regular; font-size:33px; letter-spacing:2px' id = 'total_dollar_in_account_detail'>
+				$567.00
+			</div>
+			<div style = 'display:none'>
+				<div class = 'text_line_absolute no-transform' style = 'top:190px; width:50%; left:0px; color:rgb(29,29,29); opacity:0.5; font-family:AvenirNext-Regular; font-size:10px; letter-spacing:1px'>INCOME</div>
+				<div class = 'text_line_absolute no-transform' style = 'top:220px; width:50%; left:0px; color:rgb(29,29,29); opacity:1; font-family:AvenirNext-Regular; font-size:15px; letter-spacing:1px'>$900</div>
+				<div class = 'text_line_absolute no-transform' style = 'top:190px; width:50%; left:50%; color:rgb(29,29,29); opacity:0.5; font-family:AvenirNext-Regular; font-size:10px; letter-spacing:1px'>INCOME</div>
+				<div class = 'text_line_absolute no-transform' style = 'top:220px; width:50%; left:50%; color:rgb(29,29,29); opacity:1; font-family:AvenirNext-Regular; font-size:15px; letter-spacing:1px'>$100</div>
+			</div>
+		</DIV>
+		<div id = 'linked_accounts' style = 'width:100%; height:50px; position:relative; background:#eee; font-family:AvenirNext-Medium; line-height:56px; padding-left:20px; font-size:14px; color:rgb(150,150,150);'>
+			RECENT TRANSACTIONS
+		</div>
+		<ion-list >
+
+
+
+			<ion-item class="item-thumbnail-left" style = 'min-height:56px; padding-top:0px; padding-bottom:0px; padding-left:48px;' ng-repeat = "transaction in allTransactions track by $index">
+
+				<img ng-src = "{{getCategoryIcon(transaction)}}"  class = 'center_area' style = 'height: 26px;
+							float: left; position: absolute; border-radius:13px; border:0.5px solid rgb(200,200,200); top:50%; left: 26px;width: 26px; '>
+				<div  ng-bind = 'transaction.name' style = 'max-width:calc(100% - 70px); overflow:hidden; font-family:AvenirNext-Regular; font-size:14px; float:left; color:rgb(50,50,50); height:56px; line-height:56px;'></div>
+
+				<div ng-bind = 'getAmountValue(transaction)' style = 'font-family:AvenirNext-Medium; font-size:13px;
+						float:right; margin-right:1px; height:56px; line-height:56px;' ng-style="getColor(transaction)"></div>
+
+
+			</ion-item>
+
+
+		</ion-list>
+		<div id = 'more_bank' class = 'recent_transaction' style = 'width:100%; height:56px; position:relative; display:none'>
+			<img src = 'img/assets/more.png'  class = 'center_area' style = 'height: 26px;
+							float: left;
+							position: absolute;
+							left: 26px;
+							width: 26px; '>
+			<div  style = 'top:50%; float:left; line-height:56px;margin-left:50px;'>
+				Link another account
+			</div>
+
+			<img src = 'img/assets/right_arrow1.png'  class = 'center_area' style = 'height: 29px;
+							float: left;
+							left:calc(100% - 30px);
+							position: absolute;
+
+							width: 20px; '>
+		</div>
+	</ion-content>
+</ion-view>

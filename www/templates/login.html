@@ -1,0 +1,40 @@
+<ion-view id = 'login_page'>
+    <ion-content has-bouncing='false' scroll = 'true'>
+        <div style = 'width:100%; position:relative; overflow:hidden; height:290px; left:0px; top:0px; background-color:rgb(153,213,221);' class = 'main_logo' id = 'logo_area_in_login_page'>
+            <img src = 'img/assets/logo.png' style = 'position:absolute; left:50%; top:50%;  height:50%; transform:translate(-50%, -50%);
+                -ms-transform:translate(-50%, -50%);
+                -webkit-transform:translate(-50%, -50%);
+                -moz-transform:translate(-50%, -50%);
+                -o-transform:translate(-50%, -50%);'>
+        </div>
+        <div style = 'width:100%; overflow:hidden; left:0px; background-color:white; ' id = 'login_area_in_login_page'>
+
+            <div class="" style = 'padding-top:57px'>
+                    <div><div  class = "centerx" align='center' style = 'font-family: AvenirNext-Regular; letter-spacing:0.3px; font-size:13px;color:#a1a1a7'>Email</div></div>
+                    <div style = 'padding-top:7px'><input type="email" placeholder="" id = 'email' style = 'letter-spacing:0.3px; font-size:15px; font-family:AvenirNext-Regular; text-align:center; width:100%'></div>
+                    <div class = 'centerx' style = 'padding-top:1px; height:1px; border:0px solid rgb(29,29,38);letter-spacing:0.3px;  opacity:0.1; width:calc(100% - 45px); border-top-width:1px;'></div>
+                    <div style = 'padding-top:24px'><div class="enterx"  align='center' style = 'letter-spacing:0.3px; font-family: AvenirNext-Regular; font-size:13px; color:#a1a1a7'>Password</div></div>
+                    <div style = 'padding-top:7px'><input type="password" placeholder="" id = 'password'  style = 'letter-spacing:0.3px; font-size:15px; font-family:AvenirNext-Regular; text-align:center; width:100%'>
+                    <div class = 'centerx' style = 'padding-top:1px; height:1px; border:0px solid rgb(29,29,38); opacity:0.1; letter-spacing:0.3px; width:calc(100% - 45px); border-top-width:1px;'></div>
+            </div>
+
+            <div class = 'button_area' style = 'padding-top:48px'>
+                <button class = 'button' id = 'signin' style = 'font-family: AvenirNext-Medium; background-color:#9AD7DB; height:56px; letter-spacing:1px; font-size:13px'>SIGN IN</button>
+            </div>
+
+            <div class = 'forgot_signup_area'>
+                <div class = 'left_area'>
+                    <button class = 'forgot_password'  onclick = 'window.location.href = "#/forgotpassword"' style = 'font-family: AvenirNext-Medium; letter-spacing:0.5px; font-size:12px'>FORGOT PASSWORD?</button>
+                </div>
+                <div class = 'right_area'>
+                    <button class = 'create_account' onclick = 'window.location.href = "#/signup"' style = 'color:#9AD7DB; font-family: AvenirNext-Medium; letter-spacing:0.5px; font-size:12px'>CREATE ACCOUNT</button>
+                </div>
+            </div>
+
+            <div style = 'padding-top:30px'>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
+
+

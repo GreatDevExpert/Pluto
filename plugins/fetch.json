@@ -1,0 +1,55 @@
+{
+    "ionic-plugin-keyboard": {
+        "source": {
+            "type": "registry",
+            "id": "ionic-plugin-keyboard"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-sqlite-storage": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/litehelpers/Cordova-sqlite-storage.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-camera": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/apache/cordova-plugin-camera.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-compat": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-compat"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "ru.appsm.customkeyboard": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/mnill/cordova-custom-keyboard",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "phonegap-plugin-push": {
+        "source": {
+            "type": "registry",
+            "id": "phonegap-plugin-push"
+        },
+        "is_top_level": true,
+        "variables": {
+            "SENDER_ID": "234902349023890424878733894"
+        }
+    }
+}

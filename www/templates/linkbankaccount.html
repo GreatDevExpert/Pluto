@@ -1,0 +1,266 @@
+    <head>
+      <!--<script src="https://cdn.plaid.com/link/stable/link-initialize.js"></script>-->
+
+</head>
+
+<ion-view id = 'linkbankaccount_page'>
+    <ion-header-bar style = ''>
+
+        <div class = 'buttons'>
+            <button id = 'back_button' class = 'create_account' style = 'font-size:16px; border:0px solid white; background:none; color:#60c1cc;'>Back</button>
+        </div>
+        <div class = 'title'>
+                        Link Your Accounts
+        </div>
+
+    </ion-header-bar>
+
+    <ion-content style = '' has-bouncing="false" scroll = 'true'>
+
+        <div class = 'header'> WHY IS THIS NECESSARY? </div>
+        <div class = 'white_content'>
+            Linking your bank accounts lets us analyze your spending, recommend challenges and track your progress.<br>
+            <a href='javascript:void(0);' style = 'line-height:21px;'>Learn more about our security</a>
+        </div>
+        <div class = 'header'> FIND &amp; LINK YOUR ACCOUNT </div>
+
+        <ul id = 'bank_list'>
+            <li data-type='amex'>
+                <div  class = 'circle'><img src = 'img/assets/bank_icon/American-Express.png'></div>
+                American Express
+                <div  ng-if="bankLoadingStatus['amex'] == 'loading'">
+                    <ion-spinner name = "ios"></ion-spinner>
+                </div>
+                <div ng-if="bankLoadingStatus['amex'] === 'failed' ">
+                    <img src = 'img/assets/checkmark_failed.png'>
+                    <span style = 'text-decoration:underline; '>RETRY</span>
+                </div>
+                <div ng-if="bankLoadingStatus['amex'] === 'ok'">
+                    <img src = 'img/assets/checkmark.png'>
+                </div>
+            </li>
+            <li data-type='bofa'>
+                <div  class = 'circle'><img src = 'img/assets/bank_icon/BoA.png'></div>
+                Bank of America
+                <div  ng-if="bankLoadingStatus['bofa'] == 'loading'">
+                    <ion-spinner name = "ios"></ion-spinner>
+                </div>
+                <div ng-if="bankLoadingStatus['bofa'] === 'failed'">
+                    <img src = 'img/assets/checkmark_failed.png'>
+                    <span style = 'text-decoration:underline; '>RETRY</span>
+                </div>
+                <div ng-if="bankLoadingStatus['bofa'] === 'ok'">
+                    <img src = 'img/assets/checkmark.png'>
+                </div>
+            </li>
+            <li data-type='capone360'>
+                <div  class = 'circle'><img src = 'img/assets/bank_icon/Capital-One.png'></div>
+                Capital One 360
+                <div  ng-if="bankLoadingStatus['capone360'] == 'loading'">
+                    <ion-spinner name = "ios"></ion-spinner>
+                </div>
+                <div ng-if="bankLoadingStatus['capone360'] === 'failed'">
+                    <img src = 'img/assets/checkmark_failed.png'>
+                    <span style = 'text-decoration:underline; '>RETRY</span>
+                </div>
+                <div ng-if="bankLoadingStatus['capone360'] === 'ok'">
+                    <img src = 'img/assets/checkmark.png'>
+                </div>
+            </li>
+
+            <li data-type='chase'>
+                <div  class = 'circle'><img src = 'img/assets/bank_icon/Chase.png'></div>
+                Chase
+                <div ng-if="bankLoadingStatus['chase'] == 'loading'">
+                    <ion-spinner name = "ios"></ion-spinner>
+                </div>
+                <div ng-if="bankLoadingStatus['chase'] === 'failed'">
+                    <img src = 'img/assets/checkmark_failed.png'>
+                    <span style = 'text-decoration:underline; '>RETRY</span>
+                </div>
+                <div ng-if="bankLoadingStatus['chase'] === 'ok'">
+                    <img src = 'img/assets/checkmark.png'>
+                </div>
+            </li>
+
+            <li data-type='citi'>
+                <div  class = 'circle'><img src = 'img/assets/bank_icon/Citi.png'></div>
+                Citi
+                <div  ng-if="bankLoadingStatus['citi'] == 'loading'">
+                    <ion-spinner name = "ios"></ion-spinner>
+                </div>
+                <div ng-if="bankLoadingStatus['citi'] === 'failed'">
+                    <img src = 'img/assets/checkmark_failed.png'>
+                    <span style = 'text-decoration:underline; '>RETRY</span>
+                </div>
+                <div ng-if="bankLoadingStatus['citi'] === 'ok'">
+                    <img src = 'img/assets/checkmark.png'>
+                </div>
+            </li>
+
+            <li data-type='fidelity'>
+                <div  class = 'circle'><img src = 'img/assets/bank_icon/Fidelity.png'></div>
+                Fidelity
+                <div ng-if="bankLoadingStatus['fidelity'] == 'loading'">
+                    <ion-spinner name = "ios"></ion-spinner>
+                </div>
+                <div ng-if="bankLoadingStatus['fidelity'] === 'failed'">
+                    <img src = 'img/assets/checkmark_failed.png'>
+                    <span style = 'text-decoration:underline; '>RETRY</span>
+                </div>
+                <div ng-if="bankLoadingStatus['fidelity'] === 'ok'">
+                    <img src = 'img/assets/checkmark.png'>
+                </div>
+            </li>
+
+            <li data-type='wells'>
+                <div  class = 'circle'><img src = 'img/assets/bank_icon/WellsFargo.png'></div>
+                Wells Fargo
+
+                <div ng-if="bankLoadingStatus['wells'] == 'loading'">
+                    <ion-spinner name = "ios"></ion-spinner>
+                </div>
+                <div ng-if="bankLoadingStatus['wells'] === 'failed'">
+                    <img src = 'img/assets/checkmark_failed.png'>
+                    <span style = 'text-decoration:underline; '>RETRY</span>
+                </div>
+                <div ng-if="bankLoadingStatus['wells'] === 'ok'">
+                    <img src = 'img/assets/checkmark.png'>
+                </div>
+            </li>
+
+            <li data-type='us'>
+                <div  class = 'circle'><img src = 'img/assets/bank_icon/USBank.png'></div>
+                US Bank
+                <div  ng-if="bankLoadingStatus['us'] == 'loading'">
+                    <ion-spinner name = "ios"></ion-spinner>
+                </div>
+                <div ng-if="bankLoadingStatus['us'] === 'failed'">
+                    <img src = 'img/assets/checkmark_failed.png'>
+                    <span style = 'text-decoration:underline; '>RETRY</span>
+                </div>
+                <div ng-if="bankLoadingStatus['us'] === 'ok'">
+                    <img src = 'img/assets/checkmark.png'>
+                </div>
+            </li>
+
+            <li data-type='schwab'>
+                <div  class = 'circle'><img src = 'img/assets/bank_icon/Charles_Schwab.png'></div>
+                Charles Schewab
+                <div  ng-if="bankLoadingStatus['schwab'] == 'loading'">
+                    <ion-spinner name = "ios"></ion-spinner>
+                </div>
+                <div ng-if="bankLoadingStatus['schwab'] === 'failed'">
+                    <img src = 'img/assets/checkmark_failed.png'>
+                    <span style = 'text-decoration:underline; '>RETRY</span>
+                </div>
+                <div ng-if="bankLoadingStatus['schwab'] === 'ok'">
+                    <img src = 'img/assets/checkmark.png'>
+                </div>
+            </li>
+
+            <li data-type='nfcu'>
+                <div  class = 'circle'></div>
+                Navy Federal Credit Union
+                <div  ng-if="bankLoadingStatus['nfcu'] == 'loading'">
+                    <ion-spinner name = "ios"></ion-spinner>
+                </div>
+                <div ng-if="bankLoadingStatus['nfcu'] === 'failed'">
+                    <img src = 'img/assets/checkmark_failed.png'>
+                    <span style = 'text-decoration:underline; '>RETRY</span>
+                </div>
+                <div ng-if="bankLoadingStatus['nfcu'] === 'ok'">
+                    <img src = 'img/assets/checkmark.png'>
+                </div>
+            </li>
+            <li data-type='suntrust'>
+                <div  class = 'circle'><img src = 'img/assets/bank_icon/SunTrust.png'></div>
+                SunTrust
+                <div  ng-if="bankLoadingStatus['suntrust'] == 'loading'">
+                    <ion-spinner name = "ios"></ion-spinner>
+                </div>
+                <div ng-if="bankLoadingStatus['suntrust'] === 'failed'">
+                    <img src = 'img/assets/checkmark_failed.png'>
+                    <span style = 'text-decoration:underline; '>RETRY</span>
+                </div>
+                <div ng-if="bankLoadingStatus['suntrust'] === 'ok'">
+                    <img src = 'img/assets/checkmark.png'>
+                </div>
+            </li>
+            <li data-type='usaa'>
+                <div  class = 'circle'><img src = 'img/assets/bank_icon/USAA.png'></div>
+                USAA
+                <div  ng-if="bankLoadingStatus['usaa'] == 'loading'">
+                    <ion-spinner name = "ios"></ion-spinner>
+                </div>
+                <div ng-if="bankLoadingStatus['usaa'] === 'failed'">
+                    <img src = 'img/assets/checkmark_failed.png'>
+                    <span style = 'text-decoration:underline; '>RETRY</span>
+                </div>
+                <div ng-if="bankLoadingStatus['usaa'] === 'ok'">
+                    <img src = 'img/assets/checkmark.png'>
+                </div>
+            </li>
+            <li data-type='pnc'>
+                <div  class = 'circle'><img src = 'img/assets/bank_icon/PNC.png'></div>
+                PNC
+                <div  ng-if="bankLoadingStatus['pnc'] == 'loading'">
+                    <ion-spinner name = "ios"></ion-spinner>
+                </div>
+                <div ng-if="bankLoadingStatus['pnc'] === 'failed'">
+                    <img src = 'img/assets/checkmark_failed.png'>
+                    <span style = 'text-decoration:underline; '>RETRY</span>
+                </div>
+                <div ng-if="bankLoadingStatus['pnc'] === 'ok'">
+                    <img src = 'img/assets/checkmark.png'>
+                </div>
+            </li>
+        </ul>
+
+        <div style = ' width:100%; height: 60px; '></div>
+    </ion-content>
+
+    <button class = 'button'
+            style = 'color:white; font-family:AvenirNext-Medium; font-size:13px; letter-spacing:1px;
+                background-color:rgb(153,213,221); width:100%; height: 60px; position:fixed; bottom:0px; left:0px' id = 'next_button'>
+        NEXT
+    </button>
+
+    <div style = 'position:absolute; z-index:999; left:0px; top:0px; width:100%; height:100%; display:none' id = 'almost_done'>
+      <div style = 'position:absolute; opacity:0.5; background-color:black; left:0px; top:0px; width:100%; height:100%;' id = 'gray_background'>  </div>
+      <div style = 'position:absolute; width:260px; height:327px' class = 'center_area'>
+        <div style = 'position:absolute; left:0px; top:0px; height: calc(100% - 50px); width:100%; background-color:rgb(153,213,221);
+                                            border-top-left-radius: 10px; border-top-right-radius: 10px;'>
+          <label class = 'centerx_area'
+                 style = 'text-align:center;
+                            top:40px; width:100%;
+                            font-family:AvenirNext-Medium;
+                            font-size:17px;
+                            color:white'>
+              ALMOST DONE...
+          </label>
+
+          <img class = 'centerx_area' style = 'top:88px; height:79px;' src = 'img/assets/soon.png'>
+
+          <label class = 'centerx_area' style = '
+                text-align:center; top:180px; width:100%; font-family:AvenirNext-Regular; font-size:14px;color:white; line-height:22px; letter-spacing:0.6px;'>
+                Pick from the list of recommended<br>
+                challenges we prepared for you<br>
+                to start saving for your goal!
+          </label>
+        </div>
+
+        <button id = 'uhahahaha'
+                style = "position:absolute;
+                         border-bottom-left-radius: 10px;
+                         border-bottom-right-radius: 10px;
+                         border:0px solid white; font-size:12px;
+                         font-family:AvenirNext-Medium;
+                         left:0px; bottom:0px; height: 52px; width:100%;
+                         background-color:white; color:#555555">
+            OKAY
+        </button>
+      </div>
+    </div>
+    </ion-view>
+

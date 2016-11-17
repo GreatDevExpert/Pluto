@@ -1,0 +1,186 @@
+<ion-view id = 'challenge_detail' title = "Challenge">
+	<ion-nav-buttons side="left">
+		<button menu-toggle="left" class="button button-icon icon" style = 'color:#60c1cc;'>Menu</button>
+	</ion-nav-buttons>
+	<ion-nav-buttons side="right">
+		<button class="button button-icon icon right_top_button" style = 'color:#60c1cc;' ng-click = 'editChallenge()' >Edit</button>
+	</ion-nav-buttons>
+	<div style = 'width:100%; height:100%; position:absolute; display:none' id = 'background_layer_no_goals'>
+		<div class = 'center_area' style = 'font-family:AvenirNext-Medium; font-size:15px; color:rgb(190,190,190); width:100%; text-align:center' id = 'background_layer_no_goals_text'>
+			No Active Challenges.
+		</div>
+	</div>
+	<ion-content scroll = 'true' has-bouncing='false' class = 'has-header'>
+		<div class = 'text_line_absolute' style = 'top:16px;font-family: "AvenirNext-Italic";color:rgb(29,29,38); font-size:12px' id = 'challengeDetail_index'>1 of 3</div>
+		<div class = 'text_line_absolute' style = 'top:45px;font-family: "AvenirNext-Regular"; color:rgb(29,29,38); letter-spacing:0.8px; font-size:13px'>SPEND LESS ON</div>
+		<div class = 'text_line_absolute' style = 'top:67px;font-family: "AvenirNext-Regular"; color:rgb(29,29,38); letter-spacing:1px; font-size:21px' id = 'challengeDetail_categoryName'>Food and Drink</div>
+		<div style = 'left:20px; padding-left:6px; top:55px; padding-top:5px; position:absolute;' ng-click = 'gotoNextChallenge(-1)'><div style = 'color:#ddd; width:50px; height:50px; font-size:25px'>&#9668;</div></div>
+		<div style = 'right:20px; padding-right:6px; top:50px; padding-top:10px; position:absolute;' ng-click = 'gotoNextChallenge(1)'><div style = 'font-size:25px; color:#ddd; transform:rotate(180deg); -webkit-transform:rotate(180deg)'>&#9668;</div></div>
+		<div class = 'text_line_absolute' id = 'percent_circle_background' style = 'color:white;'>
+			<div style = 'top:0px; width:100%;height:calc(100% * 0.5); left:0px; background-color:#eee; color: rgb(153,221,221); overflow:hidden' class = 'text_line_absolute main_part' id = 'gray_part'>
+				<div class = 'text_line_absolute' style = 'font-family: AvenirNext-Medium; letter-spacing:0.6px; font-size:13px; top:76px;  ' id = 'on_track_to_save'>ON TRACK TO SAVE</div>
+				<div class = 'text_line_absolute' style = 'font-family: AvenirNext-Medium; font-size:45px; letter-spacing: 0.6px; top:115px; ' id = 'dollar'>$160</div>
+				<div class = 'text_line_absolute' id = 'percent_circle_foreground' style = 'top:160px ;  width:187px; height:1px; background-color: white'></div>
+				<div class = 'text_line_absolute' style = 'top:180px;   display: flex; justify-content: center; align-items: center;'>
+					<div style = 'line-height:28px; display:inline; font-family:AvenirNext-Medium; font-size:18px' id = 'circle_progress_text'>You killn' it </div>
+					<img src = 'img/assets/hand_OK.png' style = 'height:28px'>
+				</div>
+			</div>
+			<div style = 'bottom:0px; width:100%;height:calc(100% * 0.5); left:0px; background-color:rgb(153,221,221); color:white; overflow:hidden' class = 'text_line_absolute main_part' id = 'real_part'>
+				<div class = 'text_line_absolute' style = 'font-family: AvenirNext-Regular; letter-spacing:0.6px; font-size:13px; top:calc(76px - 250px * 0.5); '>ON TRACK TO SAVE</div>
+				<div class = 'text_line_absolute' style = 'font-family: AvenirNext-Medium; font-size:45px; letter-spacing: 0.6px; top:calc(115px - 250px * 0.5);' id = 'dollar'>$160</div>
+				<div class = 'text_line_absolute' id = 'percent_circle_foreground' style = 'top:calc(160px - 250px * 0.5);  width:187px; height:1px; background-color: white'></div>
+				<div class = 'text_line_absolute' style = 'top:calc(180px - 250px * 0.5);   display: flex; justify-content: center; align-items: center;'>
+					<div style = 'line-height:28px; display:inline; font-family:AvenirNext-Medium; font-size:18px' id = 'circle_progress_text'>You killn' it </div>
+					<img src = 'img/assets/hand_OK.png' style = 'height:28px'>
+				</div>
+			</div>
+			<div style = 'top:0px; width:100%;height:calc(100% * 0.5); left:0px; background-color:#eee; color: rgb(153,221,221); overflow:hidden; display:none' class = 'text_line_absolute secondary_part' id = 'gray_part'>
+				<div class = 'center_area' style = 'width:100%; font-family: AvenirNext-Medium; letter-spacing:0.5px; font-size:13px;' id = 'spent_amount'>SPENT : $<span >150</span></div>
+			</div>
+			<div style = 'bottom:0px; width:100%;height:calc(100% * 0.5); left:0px; background-color:rgb(153,221,221); color:white; overflow:hidden; display:none' class = 'text_line_absolute secondary_part' id = 'real_part'>
+				<div class = 'center_area' style = 'width:100%; font-family: AvenirNext-Medium; letter-spacing:0.5px; font-size:13px;' id = 'saved_amount'>SAVED : $<span >150</span></div>
+			</div>
+		</div>
+		<div class ='text_line_absolute' style = 'top:392px; background-color:gray' id = 'days'>
+			<div class = 'centerx_area' style = 'width:calc(100% - 134px); background-color:gray'>
+				<div class = 'day' style = 'left:0%'>
+					<div>DAY</div>
+					<DIV style = 'font-size:13px' id = 'day_no'>1</DIV>
+				</div>
+			</div>
+		</div>
+		<div class = 'text_line_absolute' style = 'font-size:12px; color:#666; top:438px; ' id = 'period'>
+			Wed, Apr 20 - Sun, Apr 24
+		</div>
+		<div class = 'text_line_absolute' style = 'text-align:left; padding-left:20px; top:474px; background-color:#eeeeee; font-size:13px; letter-spacing:1px; height:50px; line-height:50px'>
+			PROJECTED IMPACT ON GOALS
+		</div>
+		<div class = 'text_line_absolute' style = 'top:550px; font-size:13px' id = 'goal_title'>
+			Summer in SE Asia
+		</div>
+		<div class = 'text_line_absolute' style = 'top:580px;' id = 'challenge_detail_goto_goal_detail'>
+			<canvas id = 'arc_canvas' width = "300" height = "89">
+				Your browser does not support CANVAS.
+			</canvas>
+			<br>
+			<div style = 'width:300px' class = 'centerx_area'>
+				<div style = 'float:left; transform:translate(-50%, -30%); -webkit-transform:translate(-50%, -30%); -moz-transform:translate(-50%, -30%);
+						-ms-transform:translate(-50%, -30%); -o-transform:translate(-50%, -30%); color:#888; font-size:10px' id = 'zero_start_value'>$0</div>
+				<div style = 'float:right; transform:translate(50%,-30%); -webkit-transform:translate(50%, -30%); -moz-transform:translate(50%, -30%);
+						-ms-transform:translate(50%, -30%); -o-transform:translate(50%, -30%);color:#888; font-size:10px' id = 'goal_limit'>$400</div>
+			</div>
+		</div>
+		<div class = 'text_line_absolute' style = 'top:644px; font-size:13px'>
+			<span id = 'saving_header'>By saving </span><span style = 'font-family: AvenirNext-Medium; font-size:14px;' id = 'saving_amount'>+$160</span>,<br>
+			<span id = 'saving_footer'>you can make</span> <span style = 'font-family: AvenirNext-Medium; font-size:16px;color:rgb(248,173,78)' id = 'saving_amount_progress'>+26%</span> progress!
+		</div>
+		<!--<div class = 'text_line_absolute' style = 'top:720px; height:1px; background-color:#ddd'>-->
+		<!--</div>-->
+		<div class = 'text_line_absolute' style = 'text-align:left; padding-left:20px; top:740px; background-color:#eeeeee; font-size:13px; height:50px; line-height:50px'>
+			RECENT TRANSACTIONS
+		</div>
+		<div class = 'text_line_absolute' style = 'top:790px; display:none'>
+			<div id = 'recent_transaction0' class = 'recent_transaction' style = 'display:none'>
+				<img id = 'category_icon' style = 'border-radius:18px; border: 1px solid #d0d0d0; height:36px'>
+				<div id = 'transaction_text'>
+					Blue Bottle Embarcade
+					<br>
+					<span style = 'font-size:10px'>Wed, Feb 20 2016</span>
+				</div>
+				<div id = 'transaction_sub_text'>
+					Blue Bottle Embarcade
+
+				</div>
+				<div id = 'price' style = 'color:rgb(250,100,100); font-size:13px;'>
+					$4.12
+				</div>
+			</div>
+			<div id = 'recent_transaction_morex' class = 'recent_transaction'>
+				<img src = 'img/assets/more.png' id = 'category_icon' style = 'height:36px'>
+				<div id = 'transaction_text' style = 'top:50%'>
+					Show more transactions
+				</div>
+				<div id = 'price'>
+					<img src = 'img/assets/right_arrow1.png' id = 'more_arrow' style = 'height:26px'>
+				</div>
+			</div>
+		</div>
+
+		<ion-list class = 'text_line_absolute' style = 'top:790px;'>
+
+
+
+				<ion-item ng-repeat="transaction in recentTransactions"
+						  class="transaction_list_item_in_transaction_page" style = 'min-height:56px;' ng-click = 'viewTransaction(transaction)'>
+
+					<div class = 'recent_transaction'>
+						<img id = 'category_icon' style = 'border-radius:18px; border: 1px solid #d0d0d0; height:36px' ng-src = "{{transaction.icon}}">
+						<div id = 'transaction_text' >
+							<span ng-bind = "transaction.name"></span>
+						</div>
+						<div id = 'transaction_sub_text' ng-bind = "transaction.dateText">
+							Blue Bottle Embarcade
+
+						</div>
+						<div id = 'price' ng-bind = 'transaction.priceText' ng-style = 'transaction.colorStyle'>
+							$4.12
+						</div>
+					</div>
+
+
+					<ion-option-button class="button-info"
+									   ng-click="editTransaction(transaction)" style = 'background-color:rgb(153,222,222); font-size:12px; border-right:1px solid white; padding-left:20px; padding-right:20px; color:white'>
+						EDIT
+					</ion-option-button>
+
+					<ion-option-button class="button-positive"
+									   ng-click="deleteTransaction(transaction)" style = 'background-color:#ddd; font-size:12px;'>
+						DELETE
+					</ion-option-button>
+					<ion-delete-button class="ion-minus-circled"
+									   ng-click="items.splice($index, 1)">
+					</ion-delete-button>
+					<ion-reorder-button class="ion-navicon"
+										on-reorder="reorderItem(item, $fromIndex, $toIndex)">
+					</ion-reorder-button>
+
+				</ion-item>
+				<ion-item style = 'padding:0'>
+					<div id = 'recent_transaction_more' class = 'recent_transaction'>
+						<img src = 'img/assets/more.png' id = 'category_icon' style = 'height:36px'>
+						<div id = 'transaction_text' style = 'top:50%'>
+							Show more transactions
+						</div>
+						<div id = 'price'>
+							<img src = 'img/assets/right_arrow1.png' id = 'more_arrow' style = 'height:26px'>
+						</div>
+					</div>
+				</ion-item>
+		</ion-list>
+	</ion-content>
+
+	<div style = 'position:absolute; z-index:999; left:0px; top:0px; width:100%; height:100%; display:none' id = 'push_dialog'>
+		<div style = 'position:absolute; opacity:0.5; background-color:black; left:0px; top:0px; width:100%; height:100%;' id = 'gray_background'>  </div>
+		<div style = 'position:absolute; width:260px; height:300px' class = 'center_area'>
+			<div style = 'position:absolute; left:0px; top:0px; height: calc(100% - 53px); width:100%; background-color:white;
+            border-top-left-radius: 10px; border-top-right-radius: 10px;'>
+				<label  style = 'position:absolute; text-align:center; width:100%; top:40px; letter-spacing:0.6px; font-family:AvenirNext-Medium; font-size:17px; color:#555555'>HEY, LIFE HAPPENS!</label>
+				<img class = 'centerx_area' style = 'position:absolute; top:95px; width:60px; ' src = 'img/assets/challenge_detail_hand.png'>
+				<label style = 'position:absolute; text-align:center; top:180px; width:100%; font-family: AvenirNext-Regular; letter-spacing:0.5px; line-height:24px; font-size:13px;color:#555555' id = 'push_alert'>
+					You're away from this challenge<br>
+				</label>
+				<!--<label class = 'center_area' style = 'text-align:center; top:70%; width:100%; font-size:13px;color:white'>Just do it step by step and you'll</label>-->
+				<!--<label class = 'center_area' style = 'text-align:center; top:80%; width:100%; font-size:13px;color:white'>reach your goal in no time!</label>-->
+				<!--<label class = 'center_area' style = 'text-align:center; top:90%; width:100%; font-size:13px;color:white'>We're here to help :-)</label>-->
+			</div>
+			<button style = 'position:absolute; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;
+            border:0px solid white; left:0px; bottom:0px; height: 53px; width:100%; background-color:rgb(153,213,221); color:WHITE' id = 'push_OK'>
+				OK
+			</button>
+		</div>
+	</div>
+
+
+</ion-view>
+

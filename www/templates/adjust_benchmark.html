@@ -1,0 +1,137 @@
+
+<ion-view style = ' height:100%;;' id = 'adjust_benchmark'>
+  <ion-header-bar style = ''>
+
+    <div class = 'buttons' style = ''>
+      <button id = 'back_button' class = 'create_account'  style = 'font-size:16px; font-family:AvenirNext-Medium; border:0px solid white; background:none; color:#60c1cc;'>Back</button>
+    </div>
+    <div class = 'title' style = 'font-family:AvenirNext-Medium'>
+      Adjust Benchmark
+    </div>
+  </ion-header-bar>
+
+
+
+
+  <ion-content scroll = 'true' has-bouncing='false'>
+
+      <img src = '' id = 'clone' style = 'display:none' class = 'adjust_benchmark_button'>
+      <div id = 'title_area' style = 'padding-top:43px; letter-spacing:1px; font-size:13px; width:100%;  text-align:center; color:rgb(29,29,29)' class = ''>
+        SPEND LESS ON
+      </div>
+
+      <div id = 'subtitle_area' style = 'margin-top:3px;  text-align:center; font-size:20px; letter-spacing:1.3px; color:rgb(29,29,29)' class = ''>
+        <span id = 'sub_title_text'>Food and Drink</span>
+      </div>
+
+      <div id = 'circle' style = 'position:relative;margin:auto; margin-top:28px; margin-bottom:25px'>
+        <div id = 'content' class = 'center_area' style = 'width:100%'>
+          <div id = 'float_space' style = 'width:20px; height:30px;'></div>
+          <div id = 'spend_less_than' style = 'color:rgb(60,60,60); width:100%; font-size:17px; text-align:center'>Spend less than</div>
+          <div id = 'dollar' style = ' color:rgb(154,215,219);width:100%; text-align:center; position:relative'>
+            <div  style = 'width:10px; height:30px; float:left;'></div>
+            <span id = 'dollar_value' style = 'font-size:45px; font-family:AvenirNext-Medium; color:rgb(96,193,204)'>$200</span>
+            <img src = 'img/assets/numkeypad.png' id = 'keypad' style = 'width:20px; height:29px'>
+            <input type = number pattern="[0-9]*" style = 'display:none; color:rgb(153,215,221); position:absolute; width:200px; top:0px; left:20px; text-align:right;font-weight:bold; border:1px solid black' id = 'editTextField_Dollar'>
+          </div>
+          <div id = 'hr' style = 'border:1px solid rgb(151,151,151); height:1px; margin-left:15% '></div>
+          <div id = 'period' style = 'color:rgb(29,29,38); font-size:12px; width:100%; text-align:center'>Wed, Apr 20 - Sun, Apr 24</div>
+        </div>
+      </div>
+
+      <div style = 'margin-top:25px; color:rgb(29,29,39); width:100%; text-align:center; font-size:16px; position:relative' >How does this Benchmark feel?</div>
+      <div style = 'margin-top:20px; width:100%;position:relative; height:90px'>
+        <div style = 'left:10%; top:0px;text-align:center; ' class = 'centerx_area'>
+          <div class = 'adjust_benchmark_button' data-coeff = '0.9'>
+            <div><img class = 'emoticon' src = 'img/assets/adjust_benchmark_tooeasy.png' STYLE = 'transform:scale(0.75);-webkit-transform:scale(0.75);-moz-transform:scale(0.75);-o-transform:scale(0.75)'></div>
+            <div>Too easy</div>
+            <div style = 'color:rgb(96,193,204); font-family:AvenirNext-Medium; font-size:12px'>-10%</div>
+          </div>
+        </div>
+
+        <div style = 'left:30%; top:0px;text-align:center; ' class = 'centerx_area'>
+          <div class = ' adjust_benchmark_button' data-coeff = '0.95'>
+            <div><img class = 'emoticon' src = 'img/assets/adjust_benchmark_easy.png' STYLE = 'transform:scale(0.75);-webkit-transform:scale(0.75);-moz-transform:scale(0.75);-o-transform:scale(0.75)'></div>
+            <div>Try me</div>
+            <div style = 'color:rgb(96,193,204); font-family:AvenirNext-Medium; font-size:12px'>-5%</div>
+          </div>
+        </div>
+
+        <div style = 'left:50%; top:0px;text-align:center; ' class = 'centerx_area'>
+          <div class = ' adjust_benchmark_button' data-coeff = '1'>
+            <div><img class = 'emoticon' src = 'img/assets/adjust_benchmark_normal.png' STYLE = 'transform:scale(0.9);-webkit-transform:scale(0.9);-moz-transform:scale(0.9);-o-transform:scale(0.9)'></div>
+            <div style = 'font-family: AvenirNext-Medium'>Perf</div>
+            <div id = 'perf' style = 'display:none'>Perf</div>
+          </div>
+        </div>
+
+        <div style = 'left:70%; top:0px;text-align:center; ' class = 'centerx_area'>
+          <div class = ' adjust_benchmark_button' data-coeff = '1.05'>
+            <div><img class = 'emoticon' src = 'img/assets/adjust_benchmark_hard.png' STYLE = 'transform:scale(0.75);-webkit-transform:scale(0.75);-moz-transform:scale(0.75);-o-transform:scale(0.75)'></div>
+            <div>Eeks</div>
+            <div style = 'color:rgb(96,193,204); font-family:AvenirNext-Medium; font-size:12px'>+5%</div>
+          </div>
+        </div>
+
+        <div style = 'left:90%; top:0px;text-align:center; ' class = 'centerx_area'>
+          <div class = ' adjust_benchmark_button' data-coeff = '1.1'>
+            <div><img class = 'emoticon' src = 'img/assets/adjust_benchmark_toohard.png' STYLE = 'transform:scale(0.75);-webkit-transform:scale(0.75);-moz-transform:scale(0.75);-o-transform:scale(0.75)'></div>
+            <div style = 'width:200%; margin-left:-50%'>Can't even</div>
+            <div style = 'color:rgb(96,193,204); font-family:AvenirNext-Medium; font-size:12px'>+10%</div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    <div style = 'height:60px; width:100%; margin-top:24px; position:relative;'>
+      <button id = 'letsdoit' onclick = '' disabled class = 'button' style = 'font-family:AvenirNext-Medium; font-size:13px; letter-spacing:1px; height:60px;width:100%; color:white; background:rgb(153,213,221); border:0px solid red;' >LET'S DO IT!</button>
+    </div>
+
+  </ion-content>
+
+
+  <div id = 'keyboard' style = 'display:none; padding-left:10%;padding-right:10%;'>
+
+    <div class = 'key_cell' data-value="1">1</div>
+    <div class = 'key_cell' data-value="2">2</div>
+    <div class = 'key_cell' data-value="3">3</div>
+    <div class = 'key_cell' data-value="4">4</div>
+    <div class = 'key_cell' data-value="5">5</div>
+    <div class = 'key_cell' data-value="6">6</div>
+    <div class = 'key_cell' data-value="7">7</div>
+    <div class = 'key_cell' data-value="8">8</div>
+    <div class = 'key_cell' data-value="9">9</div>
+    <div class = 'key_cell' data-value=".">.</div>
+    <div class = 'key_cell' data-value="0">0</div>
+    <div class = 'key_cell' data-value=","><img src = 'img/assets/backkey.png' style = 'width:50px' class = 'center_area'></div>
+    <div style = 'width:150%; margin-left:-25%; float:left; height:20%'>
+      <button style = 'border:0px solid red; width:100%;  background:white; height:100%; color:#777' id = 'editing_done'>OK</button>
+    </div>
+  </div>
+  <div style = 'position:absolute; z-index:999; left:0px; top:0px; width:100%; height:100%; display:none' id = 'preview_dialog'>
+    <div style = 'position:absolute; opacity:0.5; background-color:black; left:0px; top:0px; width:100%; height:100%;' id = 'gray_background'>  </div>
+    <div style = 'position:absolute; width:260px; height:350px' class = 'center_area'>
+      <div style = 'position:absolute; left:0px; top:0px; height: calc(100% - 53px); width:100%; background-color:rgb(153,213,221);
+    border-top-left-radius: 10px; border-top-right-radius: 10px;'>
+        <label  style = 'position:absolute; text-align:center; width:100%; top:40px; letter-spacing:0.6px; font-family:AvenirNext-Medium; font-size:17px; color:white'>YOU'RE ALL SET!</label>
+        <img class = 'centerx_area' style = 'position:absolute; top:95px; width:60px; ' src = 'img/assets/challenge_detail_hand.png'>
+        <label style = 'position:absolute; text-align:center; top:180px; width:100%; font-family: AvenirNext-Regular; letter-spacing:0.5px; line-height:24px; font-size:13px;color:white'>
+          Remember, every decision counts<br>
+          Just do it step by step and you'll<br>
+          reach your goal in no time!<br>
+          We're here to help :-)
+        </label>
+        <!--<label class = 'center_area' style = 'text-align:center; top:70%; width:100%; font-size:13px;color:white'>Just do it step by step and you'll</label>-->
+        <!--<label class = 'center_area' style = 'text-align:center; top:80%; width:100%; font-size:13px;color:white'>reach your goal in no time!</label>-->
+        <!--<label class = 'center_area' style = 'text-align:center; top:90%; width:100%; font-size:13px;color:white'>We're here to help :-)</label>-->
+      </div>
+      <button style = 'position:absolute; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;
+                        border:0px solid white; left:0px; bottom:0px; height: 53px; width:100%; background-color:white; color:#555555' id = 'go_to_challenge_detail_from_adjust_benchmark'>
+        GAME ON!
+      </button>
+    </div>
+  </div>
+</ion-view>
+

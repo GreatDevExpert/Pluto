@@ -1,0 +1,106 @@
+<ion-view style = 'display:flex; height:100%; flex-direction:column; flex-flow:column;' id = 'create_goal'>
+  <ion-header-bar style = ''>
+
+    <div class = 'buttons'>
+      <button id = 'back_button'  style = 'background:white; border:0px solid red; font-size:16px; color:#60c1cc'>Back</button>
+    </div>
+    <div class = 'title' id = 'view_title'>
+      Create Goal
+    </div>
+  </ion-header-bar>
+
+
+  <ion-content has-bouncing='false' scroll = "true">
+
+    <div style = 'width:100%; position:relative; left:0px; top:0px; background-color:white; height:190px'  id = "add_image_section">
+        <div id = 'placeholder_image_area' style = 'position:absolute; left:50%; top:50%;   transform:translate(-50%, -50%);
+                                -ms-transform:translate(-50%, -50%);
+                                -webkit-transform:translate(-50%,  -50%);
+                                -moz-transform:translate(-50%, -50%);
+                                -o-transform:translate(-50%, -50%); overflow:hidden; text-align:center'>
+          <img src = 'img/assets/add_image.png' style = 'width:65px'>
+          <div align="center" style = "color:#8f8f94; font-family:AvenirNext-Regular; padding-top:0px; font-size:12px; letter-spacing:0.3px">Add an image</div>
+        </div>
+        <img style = 'position:absolute; left:50%; top:50%;  transform:translate(-50%, -50%);
+          -webkit-transform:translate(-50%, -50%);
+          -moz-transform:translate(-50%, -50%);
+          -o-transform:translate(-50%, -50%);
+          -ms-transform:translate(-50%, -50%);
+          width:100%; height:100%; display:none' id = 'goal_image'>
+    </div>
+    <div style = 'width:100%; height:2px; background-color:rgb(29,29,38); opacity:0.2;'></div>
+    <div style = 'width:100%; overflow:hidden; left:0px; background-color:white'>
+
+      <div class = 'goal_page_form_group'>
+        <div class = 'goal_page_form_label'>WHAT DO YOU WANT TO SAVE FOR?</div>
+        <div class = 'goal_page_form_text'><input type="text" style = 'width:calc(100% - 50px)' placeholder="" id = 'for_what'></div>
+      </div>
+      <div class = 'goal_page_form_group'>
+        <div class = 'goal_page_form_label'>HOW MUCH DO YOU NEED TO SAVE?</div>
+        <div class = 'goal_page_form_text'>
+          <input type = 'text' style = 'font-size:15px; font-family:AvenirNext-Regular; padding-right:0px; float:left; width:12px;' value = '$' readonly>
+          <div ng-bind = 'number' id = 'save_amount' style = 'color:rgb(29,29,38); font-family:AvenirNext-Regular; padding-top:7px; height:34px; margin-left:0px;width:calc(100% - 50px)' ng-click="showKeyboard();"></div>
+          <div style="clear:both"></div>
+        </div>
+      </div>
+      <div class = 'goal_page_form_group'>
+        <div  class = 'goal_page_form_label'>
+          BY WHEN? (OPTIONAL)
+        </div>
+        <div  class = 'goal_page_form_text'><input type="date" style = 'width:calc(100% - 50px)' placeholder="" id = 'deadline' ></div>
+      </div>
+
+
+
+
+      <div style = 'padding-top:10px'>
+      </div>
+    </div>
+
+    <div style = ' width:100%; height: 60px; '></div>
+
+  </ion-content>
+
+  <ion-numeric-keyboard options="options"></ion-numeric-keyboard>
+
+  <button class = 'save_button' id = 'create_button' style = 'border:0px solid red; width:100%; height: 60px; position:fixed; bottom:0px; left:0px; font-family:AvenirNext-Medium; font-size:13px; letter-spacing:1px; background-color:#9AD7DB '>SAVE</button>
+
+
+  <div style = 'position:absolute; z-index:999; left:0px; top:0px; width:100%; height:100%; display:none' id = 'goal_saved_popup'>
+    <div style = 'position:absolute; opacity:0.5; background-color:black; left:0px; top:0px; width:100%; height:100%;' id = 'gray_background'>  </div>
+    <div style = 'position:absolute; width:260px; height:345px' class = 'center_area'>
+      <div style = 'position:absolute; left:0px; top:0px; height: calc(100% - 50px); width:100%; background-color:rgb(153,213,221);
+    border-top-left-radius: 10px; border-top-right-radius: 10px;'>
+        <label class = 'centerx_area'
+               style = 'text-align:center; top:35px; font-family:AvenirNext-Medium; font-size:17px; letter-spacing:0.6px; color:white'>
+          GOAL SAVED!
+        </label>
+
+        <img class = 'centerx_area'
+             style = 'top:82px; height:78px;' src = 'img/assets/clap.png'>
+
+        <label class = 'centerx_area'
+               style = 'text-align:center; top:180px; width:100%; font-size:13.5px; font-family:AvenirNext-Medium; color:white; line-height:22px; font-weight: normal;  letter-spacing:0.3px;'>
+          Now, link your bank accounts<br>
+          so we can recommend you<br>
+          personalized challenges<br>
+          to reach your goal
+        </label>
+        <!--<label class = 'center_area' style = 'text-align:center; top:70%; width:100%; font-size:13.6px; font-family:AvenirNext-Regular; color:white'>so we can recommend you</label>-->
+        <!--<label class = 'center_area' style = 'text-align:center; top:80%; width:100%;  font-size:13.6px; font-family:AvenirNext-Regular; color:white'>personalized challenges</label>-->
+        <!--<label class = 'center_area' style = 'text-align:center; top:90%; width:100%;  font-size:13.6px; font-family:AvenirNext-Regular; color:white'>to reach your goal</label>-->
+      </div>
+
+      <button ng-click = "goToNextScreen_In_CreateGoal();"
+              style = 'position:absolute;
+              border-bottom-left-radius: 10px;
+              border-bottom-right-radius: 10px;
+              border:0px solid white;
+              font-family:AvenirNext-Medium;
+              font-size:12px; left:0px; bottom:0px; height: 52px; width:100%;
+              background-color:white; color:rgb(80,80,80); '>
+        GOT IT
+      </button>
+    </div>
+  </div>
+</ion-view>

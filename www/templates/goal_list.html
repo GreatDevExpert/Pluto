@@ -1,0 +1,112 @@
+<ion-view id = 'goal_list' title = 'Goals'>
+    <ion-nav-bar>
+        <ion-nav-buttons side="left">
+            <button menu-toggle="left" class="button button-icon icon" style = 'color:#60c1cc;'>Menu</button>
+        </ion-nav-buttons>
+        <ion-nav-buttons side="right">
+            <button class="button button-icon icon" style = 'color:#60c1cc;' ng-click = 'gotoNewgoals();'>Add New</button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content has-bouncing='false' scroll = 'true'>
+        <div style = 'height:50px;
+                padding-left:20px;
+                line-height:50px;
+                background-color:#eeeeee;
+                color:rgb(29,29,29);
+                font-size:14px;
+                text-align:left;
+                font-family:AvenirNext-Regular '
+             class = 'text_line_relative'>
+            ONGOING (<span ng-bind = 'ongoingList.length'></span>)
+        </div>
+
+
+        <div ng-repeat="(key, value) in ongoingList"
+             style = 'border-bottom:1px solid white;  height:247px;' class = 'text_line_relative' ng-click = 'openGoal(value._id)'>
+
+            <div class = 'text_line_absolute'
+                 style = 'height:100%;
+                            top:0px;
+                            background-color:gray;
+                            background-size:100% 100%;
+                            background-position:0% 50%;'
+                 ng-style="{'background-image': 'url('+ value.image_url + ')'}">
+                <div style = 'background-color:black; opacity:0.4; width:100%; height:100%; left:0px; top:0px;'></div>
+            </div>
+
+            <div class = ' center_area ' style = 'width:80%;'>
+                <div class = 'text_line_relative' ng-bind = 'value.name' style = 'color:white; font-size:30px; letter-spacing:0.6px; font-family:AvenirNext-Medium'></div>
+                <div class = 'text_line_relative' ng-bind = 'value.currentScore' style = 'font-size:18px; padding-top:20px; font-family:AvenirNext-Medium; color:rgb(153,221,221)'></div>
+            </div>
+
+        </div>
+
+
+        <div style = 'height:50px;
+                line-height:50px;
+                padding-left:20px;
+                background-color:#eeeeee;
+                color:rgb(29,29,29);
+                text-align:left;
+                font-size:14px;
+                font-family:AvenirNext-Regular'
+             class = 'text_line_relative'>
+            PAST (<span ng-bind = 'pastList.length'></span>)
+        </div>
+
+        <div ng-repeat="(key, value) in pastList"
+             style = 'border-bottom:1px solid white; height:145px;' class = 'text_line_relative'  ng-click = 'openGoal(value._id)'>
+
+            <div class = 'text_line_absolute'
+                 style = 'height:100%;top:0px;
+                            background-color:gray;
+                            background-size:100% auto;
+                            background-position:0% 50%;'
+                 ng-style="{'background-image': 'url('+ value.image_url+')'}">
+                <div style = 'background-color:rgb(125,129,129); opacity:0.49; width:100%; height:100%; left:0px; top:0px;'></div>
+            </div>
+
+            <div class = ' center_area'>
+                <div class = 'text_line_relative' ng-bind = 'value.name' style = 'font-size:22px; letter-spacing:0.6px; font-family:AvenirNext-Medium'></div>
+                <div class = 'text_line_relative' ng-bind = 'value.currentScore' style = 'font-size:18px; letter-spacing:0.6px; padding-top:20px; font-family:AvenirNext-Medium; color:rgb(153,221,221)'></div>
+            </div>
+
+        </div>
+
+    </ion-content>
+
+
+
+    <!--<div style = 'position:absolute; z-index:999; left:0px; top:0px; width:100%; height:100%; display:none' id = 'goal_popup'>-->
+        <!--<div style = 'position:absolute; opacity:0.5; background-color:black; left:0px; top:0px; width:100%; height:100%;' id = 'gray_background'>  </div>-->
+        <!--<div style = 'position:absolute; width:260px; height:345px' class = 'center_area'>-->
+            <!--<div style = 'position:absolute; left:0px; top:0px; height: calc(100% - 50px); width:100%; background-color:rgb(153,213,221);-->
+                    <!--border-top-left-radius: 10px; border-top-right-radius: 10px;'>-->
+                <!--<label class = 'centerx_area'-->
+                       <!--style = 'text-align:center; top:35px; font-family:AvenirNext-Medium; font-size:17px; letter-spacing:0.6px; font-weight:bold; color:white'>-->
+                    <!--GOAL SAVED!-->
+                <!--</label>-->
+                <!--<img class = 'centerx_area'-->
+                     <!--style = 'top:82px; height:78px;' src = 'img/assets/clap.png'>-->
+                <!--<label class = 'centerx_area'-->
+                       <!--style = 'text-align:center; top:170px; width:100%; font-size:13.6px; font-family:AvenirNext-Regular; color:white; line-height:24px; letter-spacing:0.5px;'>-->
+                    <!--Now, link your bank accounts<br>-->
+                    <!--so we can recommend you<br>-->
+                    <!--personalized challenges<br>-->
+                    <!--to reach your goal-->
+                <!--</label>-->
+            <!--</div>-->
+            <!--<button onclick = "document.getElementById('goal_saved_popup').style.display = 'none'; window.location.href = '#/linkbankaccount';"-->
+                    <!--style = 'position:absolute;-->
+                    <!--border-bottom-left-radius: 10px;-->
+                    <!--border-bottom-right-radius: 10px;-->
+                    <!--border:0 solid white;-->
+                    <!--font-family:AvenirNext-Regular;-->
+                    <!--font-size:12px; left:0px; bottom:0px; height: 52px; width:100%;-->
+                    <!--background-color:white; color:rgb(80,80,80); '>-->
+                <!--GOT IT-->
+            <!--</button>-->
+        <!--</div>-->
+    <!--</div>-->
+</ion-view>
+

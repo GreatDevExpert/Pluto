@@ -1,0 +1,70 @@
+<ion-view id = 'goal_edit' title = 'Goals'>
+    <ion-header-bar style = ''>
+
+        <div class = 'buttons'>
+            <button id = 'back_button' class = 'create_account'  style = 'font-size:16px; border:0px solid white; background:none; color:#60c1cc;'>Back</button>
+        </div>
+        <div class = 'title'>
+            Goals
+        </div>
+        <div class = 'buttons'>
+            <button id = 'goal_edit_button' class = 'create_account'  style = 'font-size:16px; border:0px solid white; background:none; color:#60c1cc;'>Edit</button>
+        </div>
+    </ion-header-bar>
+
+    <ion-content has-bouncing='false' scroll = 'true'>
+        <div class = 'text_line_absolute' id = 'goal_edit_background_image'
+             style = 'height:calc(100% - 50px); width:100%;left:0px; top:0px; background:gray; background-size:auto 100%; background-position:center center'
+             >
+
+            <div class = 'text_line_absolute'
+                 style = 'top:50px; left:20px; text-align:left; color:white; font-family:AvenirNext-Medium; font-size:33px; letter-spacing:0.6px;' id = 'goal_name'></div>
+            <div class = 'text_line_absolute'
+                 style = 'top:95px; left:20px; text-align:left;  color:rgb(153,221,221); font-family:AvenirNext-DemiBold; font-size:18px;' id = 'goal_currentScore'></div>
+
+            <div class = 'text_line_absolute'
+                style = 'bottom:10px; width:100%;left:0;'>
+                <div class = 'text_line_relative'  style = 'color:white; font-family:AvenirNext-Regular; font-size:12px;  margin-left:20px; text-align:left'>GOAL PROGRESS</div>
+                <div class = 'text_line_relative'  style = 'background-color:white; width:calc(100% - 40px); margin-left:20px; height: 130px; text-align:center'>
+                    <canvas id = 'canvas_in_goal_detail' width = '300' height = '100' style = 'margin-top:10px'></canvas>
+                    <div class = 'text_line_absolute' style = 'text_align:center; bottom:10px; color:rgb(29,29,38); font-size:16px; font-family:AvenirNext-Regular'>You're <span id = 'percent_of_goal_in_goal_detail_page' style = 'font-family:AvenirNext-Medium'></span> to your goal!</div>
+                </div>
+                <div class = 'text_line_relative'  style = 'color:white; padding-top:10px; font-family:AvenirNext-Regular; font-size:12px;margin-left:20px; text-align:left'>ACTIVE CHALLENGES</div>
+                <div class = 'text_line_relative'  style = 'background-color:white; width:calc(100% - 40px);  height: 130px; margin-left:20px;text-align:left' id = 'active_challenges_in_goal_detail_page'>
+                    <ion-scroll direction="x"  style = ' height:100%' has-bouncing="true">
+
+                            <div class = 'challenge' style = 'left: 3%; display:none' id = 'Food_and_Drink' >
+
+                                    <img src = 'img/assets/food_drink_large.png' class = 'icon centerx_area'>
+                                    <label class = 'centerx_area' style = 'top:73%; font-size:12px; font-family:AvenirNext-Medium; width:100%; color:rgb(150,150,150); text-align:center'>Food and Drink</label>
+
+                            </div>
+                            <div class = 'challenge' style = 'left: 35%; display:none' id = 'Shops' >
+
+                                    <img src = 'img/assets/shops.png' class = 'icon centerx_area'>
+                                    <label class = 'centerx_area' style = 'top:73%; font-size:12px; font-family:AvenirNext-Medium; width:100%; color:rgb(150,150,150);text-align:center'>Shops</label>
+
+                            </div>
+                            <div  class = 'challenge' style = 'left: 67%; display:none' id = 'Travel' >
+                                    <img src = 'img/assets/travel.png' class = 'icon centerx_area'>
+                                    <label class = 'centerx_area' style = 'top:73%; font-size:12px; font-family:AvenirNext-Medium; width:100%; color:rgb(150,150,150);text-align:center'>Transportation</label>
+                            </div>
+                            <div  class = 'challenge ' style = 'left: 100%' id = 'add_new'>
+                                <div style = 'font-size:60px; border:1px solid rgb(220,220,220); border-radius:50%;' class = 'icon centerx_area'>
+                                    <div class = 'centerx_area' style = 'line-height:45px;color:rgb(200,200,200)'>+</div>
+                                </div>
+                                <label class = 'centerx_area' style = 'top:73%; font-size:12px; font-family:AvenirNext-Medium; width:100%; color:rgb(150,150,150);text-align:center'>Add New</label>
+                            </div>
+
+                    </ion-scroll>
+                </div>
+            </div>
+
+        </div>
+        <button id = 'end_goal_button' class = 'text_line_absolute'
+             style = 'height:50px; bottom:0px; width:100%;left:0px; border:0px solid white; font-size:12px; color:rgb(29,29,29); font-family:AvenirNext-Regular' ng-click = 'endGoal()'>
+            END GOAL
+        </button>
+    </ion-content>
+</ion-view>
+

@@ -1,0 +1,125 @@
+<ion-view id = 'account_detail'>
+	<ion-header-bar style = ''>
+
+		<div class = 'buttons'>
+			<button id = 'back_button'  style = 'background:white; border:0px solid red; font-size:16px; color:rgb(153,221,221)'>Back</button>
+		</div>
+		<div class = 'title' id = 'view_title'>
+			Pluto Savings
+		</div>
+
+	</ion-header-bar>
+	<ion-content scroll = 'true' has-bouncing='false' class = 'has-header'>
+		<div id = 'linked_accounts' style = 'width:100%; height:50px; position:relative; background:rgb(248,248,249); font-family:AvenirNext-Regular; line-height:56px; padding-left:20px; font-size:12px; letter-spacing:1px; color:rgb(29,29,38);'>
+			OVERVIEW
+		</div>
+		<DIV style = 'height:230px; width:100%; left:0; top:50px'>
+			<div class = 'text_line_absolute no-transform' style = 'top:90px; width:100%; left:0px; color:rgb(29,29,29); opacity:0.5; font-family:AvenirNext-Regular; font-size:12px; letter-spacing:1px'>TOTAL BALANCE</div>
+			<div class = 'text_line_absolute no-transform' style = 'top:130px; width:100%; left:0px; color:rgb(29,29,29); opacity:1; font-family:AvenirNext-Regular; font-size:33px; letter-spacing:2px' id = 'total_dollar_in_account_detail_pluto'>
+				$5</span>
+			</div>
+			<div class = 'text_line_absolute no-transform' style = 'top:190px; width:40%; left:0px; color:rgb(29,29,29); opacity:0.5; font-family:AvenirNext-Regular; font-size:12px; letter-spacing:1px'>UNASSIGNED</div>
+			<div class = 'text_line_absolute no-transform' style = 'top:220px; width:40%; left:0px; color:rgb(29,29,29); opacity:1; font-family:AvenirNext-Regular; font-size:16px; letter-spacing:1px' id = 'unassigned_value_in_pluto'>$900</div>
+			<div class = 'text_line_absolute no-transform' style = 'top:190px; width:40%; left:60%; color:rgb(29,29,29); opacity:0.5; font-family:AvenirNext-Regular; font-size:12px; letter-spacing:1px'>ASSIGNED</div>
+			<div class = 'text_line_absolute no-transform' style = 'top:220px; width:40%; left:60%; color:rgb(29,29,29); opacity:1; font-family:AvenirNext-Regular; font-size:16px; letter-spacing:1px' id = 'assigned_value_in_pluto'>$100</div>
+			<div class = 'text_line_absolute no-transform' style = 'top:200px; width:100%; left:0%; color:rgb(29,29,29); opacity:1; font-family:AvenirNext-Regular; font-size:16px; letter-spacing:1px; text-align:center'>
+				<button style = 'background:white; border:0 solid red;width: 100px;   height: 100px;    margin-top: -30px;' id = 'assign_pltuo_saving'>
+					<img src = 'img/assets/assign.png' style = 'width:35px; height:35px;'>
+				</button>
+			</div>
+		</DIV>
+		<div id = 'linked_accounts' style = 'width:100%; height:50px; position:relative; background:rgb(248,248,249); font-family:AvenirNext-Regular; line-height:56px; padding-left:20px; font-size:12px; letter-spacing:1px; color:rgb(29,29,38);'>
+			RECENT ACTIVITIES
+		</div>
+		<ion-list >
+
+
+
+			<ion-item class="item-thumbnail-left" style = 'min-height:56px; padding-top:0px; padding-bottom:0px; padding-left:48px;' ng-repeat = "pluto in myPlutos track by $index">
+
+				<div  class = 'center_area' style = 'height: 26px;
+							float: left; position: absolute; border-radius:13px; border:0 solid rgb(200,200,200); background-color: rgb(154,216,219); top:50%; left: 26px;width: 26px; '>
+					</div>
+				<div style = 'max-width:calc(100% - 70px); overflow:hidden; font-family:AvenirNext-Regular; font-size:14px; float:left; color:rgb(50,50,50); height:56px; line-height:56px;'>
+					<span ng-if="pluto[0].amount >= 0"> Saved towards </span>
+					<span ng-if="pluto[0].amount < 0"> Withdrawn from </span>
+					<span ng-bind = 'pluto[1]' style = 'font-weight:bold'></span>
+				</div>
+
+				<div ng-bind = 'getAmountValue(pluto[0] , 1)'
+					 style = 'font-family:AvenirNext-Medium; font-size:13px;float:right; margin-right:1px; height:56px; line-height:56px; color:rgb(96,193,204);'
+					ng-if = 'pluto[0].amount >= 0'>
+				</div>
+
+				<div ng-bind = 'getAmountValue(pluto[0] , 1)'
+					 style = 'font-family:AvenirNext-Medium; font-size:13px;float:right; margin-right:1px; height:56px; line-height:56px; color:red;'
+					 ng-if = 'pluto[0].amount < 0'>
+				</div>
+			</ion-item>
+
+
+		</ion-list>
+
+		<div id = 'more_bank' class = 'recent_transaction' style = 'display:none;width:100%; height:56px; position:relative'>
+			<img src = 'img/assets/more.png'  class = 'center_area' style = 'height: 26px;
+							float: left;
+							position: absolute;
+							left: 26px;
+							width: 26px; '>
+			<div  style = 'top:50%; float:left; line-height:56px;margin-left:50px;'>
+				Link another account
+			</div>
+
+			<img src = 'img/assets/right_arrow1.png'  class = 'center_area' style = 'height: 29px;
+							float: left;
+							left:calc(100% - 30px);
+							position: absolute;
+
+							width: 20px; '>
+		</div>
+		<div style = 'width:100px; height:50px'>
+
+		</div>
+	</ion-content>
+
+	<button style = 'border:0px solid white; background: rgb(122,203,215); position:absolute; bottom:0px; left:0; width:100%; height:50px; font-family: AvenirNext-Medium; font-size:13px; letter-spacing:1.3px; color:white'>
+		TRANSFER
+	</button>
+
+
+	<div style = 'position:absolute; z-index:9; left:0px; top:0px; width:100%; height:100%; display:none' id = 'assign_savings_dialog'>
+		<div style = 'position:absolute; opacity:0.5; background-color:black; left:0px; top:0px; width:100%; height:100%;' id = 'gray_background'>  </div>
+		<div style = 'position:absolute; width:260px; top:26%;' class = 'centerx_area'>
+			<div style = 'float:right; margin-top:-40px; width:30px; height:30px;' id = 'close_area_in_pluto'>
+				<img src = 'img/assets/close.png' style = 'height:30px;'>
+			</div>
+			<div style = 'position:relative; overflow:hidden; left:0px; top:0px; width:100%; height:205px; background-color:white; border-radius:5px;'>
+				<div class = 'text_line_absolute' style = 'font-size:17.5px; top:32px; font-family:AvenirNext-Medium; letter-spacing:0.2px; color:rgb(29,29,38);'>
+					Assign Savings
+				</div>
+
+				<div class = 'text_line_absolute' style = 'font-size:32.5px; top:78px; font-family:AvenirNext-Medium; letter-spacing:1.2px; color:rgb(96,193,204);' ng-click="showKeyboard();">
+					<span><img src = 'img/assets/numkeypad.png' style = 'width:25px; height:30px; visibility:hidden'></span>
+					<span id = 'goal_amount_in_pluto_saving' ng-bind="getAmountValue(number)"></span></span>
+					<span><img src = 'img/assets/numkeypad.png' style = 'width:25px; height:30px;'></span>
+				</div>
+
+				<ion-list style = 'position:absolute;top:156px; left:0px; max-height:99px; width:100%' id = 'goals_list_in_pluto_savings'>
+					<ion-item ng-repeat = 'goal in goals' style = 'border:0px solid white; height:50px; width:100%; border-top:1px solid rgb(216,216,216); position:relative' ng-click = 'onClickItem($index, this);'>
+						<div style = 'height:50px; color:rgb(29,29,38); text-align:left; text-indent: 19px; font-size:13px; font-family:AvenirNext-Regular; letter-spacing: 0.3px;'
+							 class = 'text_line_absolute' ng-bind = 'goal.name'
+							ng-style = '$index == selectedIndex && {"opacity" : "1"} || {"opacity" : "0.5"}'>
+						</div>
+					</ion-item>
+				</ion-list>
+				<div style="clear: both"></div>
+			</div>
+
+			<button style = 'margin-top:10px; position:relative; width:100%; height:50px;' disabled id = 'assign_button_in_pluto_savings' ng-click = 'onClickAssignButton();'>
+				Assign
+			</button>
+
+		</div>
+	</div>
+	<ion-numeric-keyboard options="options"></ion-numeric-keyboard>
+</ion-view>

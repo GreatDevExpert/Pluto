@@ -1,0 +1,1153 @@
+/* Empty. Add your own CSS if you like */
+
+.center_area {
+  left: 50%;
+  top: 50%;
+  position:absolute;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+input
+{
+  padding-right:0px;
+}
+
+div.scroll
+{
+  height:100%;
+}
+
+
+.centerx_area {
+  left: 50%;
+  position:absolute;
+  transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  -webkit-transform: translate(-50%, 0%);
+  -moz-transform: translate(-50%, 0%);
+  -o-transform: translate(-50%, 0%);
+}
+.bottom_button
+{
+  border:0px solid black; position:absolute; left:0px; bottom:0px; height:60px; width:100%; background:rgb(153,213,221); color:white; font-weight:bold;
+}
+
+.scroll-bar
+{
+  display:none;
+}
+div
+{
+  margin:0px;
+  padding:0px;
+}
+
+ion-side-menus ion-side-menu header.bar.bar-header
+{
+    height: 109px !important;
+}
+
+ion-side-menus ion-side-menu ion-content.has-header
+{
+    top: 170px !important;
+}
+
+ion-side-menus ion-side-menu ion-content.has-header > ion-item
+{
+    border:0px;
+}
+/* Challenge Detail ******************************************************************************************************/
+
+
+#challenge_detail *
+{
+  font-family:AvenirNext-Regular;
+}
+#challenge_detail .scroll
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.text_line_absolute
+{
+  width:100%;
+  position:absolute;
+  left:0px;
+  text-align:center;
+}
+
+.text_line_relative
+{
+  width:100%;
+  position:relative;
+  left:0px;
+  text-align:center;
+}
+
+
+#challenge_detail #percent_circle_background:after{
+  mix-blend-mode:difference;
+}
+#challenge_detail #transaction_text
+{
+  float:left;
+  left:68px;
+  top: 37%;
+  font-size:13px; font-family:AvenirNext-Regular;
+}
+#challenge_detail #transaction_sub_text
+{
+  float:left;
+  left:68px;
+  top: 65%;
+  font-size:10px;
+  opacity: 0.5;
+}
+#challenge_detail #category_icon
+{
+  float:left;
+  left:20px;
+}
+#challenge_detail #price
+{
+  float:right;
+  right:17px;
+}
+
+#challenge_detail .recent_transaction > *
+{
+  top:50%; transform:translateY(-50%); position:absolute;
+  -ms-transform:translateY(-50%);
+  -o-transform:translateY(-50%);
+  -webkit-transform:translateY(-50%);
+  -moz-transform:translateY(-50%);
+}
+
+#challenge_detail .recent_transaction
+{
+  height:75px; width:100%;
+  position:relative;;
+  border-bottom:1px solid #ddd;
+}
+
+#challenge_detail .recent_transaction:last-child
+{
+  border-bottom:0px solid red;
+}
+
+#challenge_detail #percent_circle_background
+{
+  top:120px; width:250px; height:250px; margin:auto;
+  position:absolute; border-radius:125px;
+  left:50%;
+  transform:translateX(-50%);
+  -ms-transform:translateX(-50%);
+  -o-transform:translateX(-50%);
+  -webkit-transform:translateX(-50%);
+  -moz-transform:translateX(-50%);
+  overflow:hidden; background-color:#ccc;
+}
+#challenge_detail #percent_circle_foreground
+{
+  position:relative;
+  left:50%; top:50%;
+  transform:translate(-50%, -50%);
+  -ms-transform:translate(-50%, -50%);
+  -o-transform:translate(-50%, -50%);
+  -webkit-transform:translate(-50%, -50%);
+  -moz-transform:translate(-50%, -50%);
+  color:white;
+
+}
+@media screen and (max-height:376px) and (min-height:321px) {
+
+}
+
+#challenge_detail .day
+{
+  color:#666;
+  font-size:11px;
+  line-height:15px;
+  position:absolute;
+  top:0px;
+  transform:translateX(-50%);
+  -ms-transform:translateX(-50%);
+  -o-transform:translateX(-50%);
+  -moz-transform:translateX(-50%);
+  -webkit-transform:translateX(-50%);
+  font-family:AvenirNext-Regular;
+
+}
+
+#challenge_detail .day.selected
+{
+  color:rgb(153,221,221);
+}
+
+
+
+
+
+
+
+/************************************************ Create Goal **************************************/
+
+#create_goal *
+{
+  font-family:'AvenirNext-Medium';
+}
+#create_goal input[type=text],#create_goal  input[type=password], #create_goal input[type=email], #create_goal  input[type=number], #create_goal input[type=date]
+{
+  font-size:18px;
+  text-align:left;
+}
+
+#create_goal label.item-input
+{
+  margin-left:28px;
+  margin-right:20px;
+  padding:20px;
+  padding-bottom:5px;
+  padding-left:0px;
+  border-left-style:none;
+  border-right-style:none;
+  border-top-style:none;
+}
+
+#create_goal label.item-input span
+{
+  padding:20px;
+  padding-bottom:5px;
+  padding-left:0px;
+  color:#999999;
+  font-size:10px;
+}
+#create_goal .button_area, #create_goal .forgot_signup_area
+{
+  position:absolute;
+  bottom:0px;
+  left:0px; width:100%;
+  height:60px;
+}
+
+#create_goal .save_button
+{
+  background-color:rgb(153,213,221);
+  border-radius: 0px;
+  color:white;
+  font-size: 15px;
+  width:100%;
+  height:100%;
+}
+
+
+
+#create_goal .left_area
+{
+  float:left;
+
+  margin-left: -10px;
+}
+
+#create_goal .right_area
+{
+  float:right;
+  margin-right: -10px;
+}
+
+#create_goal .input-label
+{
+  font-family:AvenirNext-Regular;
+  font-size:10px;
+  letter-spacing:1px;
+  color:rgb(29,29,38);
+  /*opacity:0.8; */
+}
+
+#create_goal input[type=text], #create_goal input[type=date], #create_goal input[type=number] {
+  font-size:15px;
+  color:rgb(29,29,38);
+  opacity:0.9;
+  font-family:AvenirNext-Regular;
+}
+
+
+/***************************************** Login Page *******************************************/
+
+#login_page input[type=text], #login_page input[type=password],#login_page  input[type=email]
+{
+  font-size:18px;
+  text-align:center;
+}
+#login_page *
+{
+  font-family:AvenirNext-Regular;
+}
+#login_page .centerx
+{
+  position:relative; left:50%;
+  transform:translateX(-50%);
+  -moz-transform:translateX(-50%);
+  -o-transform:translateX(-50%);
+  -webkit-transform:translateX(-50%);
+  -ms-transform:translateX(-50%);
+
+
+}
+#login_page label.item-input
+{
+  margin-left:20px;
+  margin-right:20px;
+  padding:20px;
+  padding-bottom:5px;
+  border-left-style:none;
+  border-right-style:none;
+  border-top-style:none;
+}
+
+#login_page label.item-input span
+{
+  padding:20px;
+  padding-bottom:5px;
+  color:#999999;
+  font-size:13px;
+}
+#login_page .button_area, #login_page  .forgot_signup_area
+{
+  padding-top:20px;
+  margin:0px 23px;
+}
+
+#login_page .button
+{
+  background-color:rgb(153,213,221);
+  border-radius: 0px;
+  color:white;
+  font-size: 15px;
+  width:100%;
+}
+
+#login_page .forgot_password
+{
+  background:none;
+  border:0px solid red;
+  color:#999;
+  font-size:14px;
+}
+
+
+#login_page .create_account
+{
+  background:none;
+  border:0px solid red;
+  color:rgb(153,213,221);
+  font-size:14px;
+}
+
+#login_page .left_area
+{
+  float:left;
+
+  margin-left: -10px;
+}
+
+#login_page .left_area *, #login_page .right_area *
+{
+  font-size:12px;
+}
+
+#login_page .right_area
+{
+  float:right;
+  margin-right: -10px;
+}
+
+@media(max-width:68px)
+{
+  #login_page .left_area, #login_page  .right_area
+  {
+    float:none;
+    text-align:center;
+    padding-bottom:10px;
+  }
+}
+
+/*@media screen and (max-height:481px)*/
+/*{*/
+  /*.main_logo {*/
+    /*min-height: 200px;*/
+  /*}*/
+/*}*/
+
+/*@media  screen and (max-height:569px) {*/
+  /*.main_logo {*/
+    /*min-height:220px;*/
+  /*}*/
+/*}*/
+/*@media screen and (max-height:770px) {*/
+  /*.main_logo {*/
+    /*min-height:314px;*/
+  /*}*/
+/*}*/
+
+/*@media screen and (min-height:771px){*/
+  /*.main_logo {*/
+    /*min-height:350px;*/
+  /*}*/
+/*}*/
+
+#goal_edit #percent_of_goal_in_goal_detail_page
+{
+  color:rgb(153,221,221);
+}
+
+
+#pick_challenge .slide > div
+{
+  transition:all .2s ease-in-out;
+}
+#pick_challenge .scroll
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#pick_challenge .slide > div
+{
+  border:1px solid #d8d8d8; border-radius:10px; position:absolute; left:5%; width:90%; top:5%; height:90%;
+}
+
+#pick_challenge .slide > div.selected
+{
+  border:2px solid rgb(153,213,221);
+  transform:scale(1.1);
+  -ms-transform:scale(1.1);
+  -o-transform:scale(1.1);
+  -moz-transform:scale(1.1);
+  -webkit-transform:scale(1.1);
+}
+
+#pick_challenge *, #transactions *
+{
+  font-family:AvenirNext-Medium;
+}
+
+#goal_edit .scroll, #transactions .scroll
+{
+  height:100%;
+}
+
+#goal_edit .icon
+{
+  height:60px;
+  width:60px;
+  top:17%;
+}
+
+#goal_edit .challenge
+{
+  width:29%; margin-left: 2%; height:100%; margin-right:2%; top:0px; position:absolute;overflow:hidden;
+}
+
+
+#pick_challenge .challenge_active_sign
+{
+  position:absolute; font-size:11px; right:10px; top:15px; padding:3px 10px; border-radius:2px; color:white; background:rgb(247,204,15); display:none;
+  letter-spacing:1px;
+}
+
+
+#transactions div.challenge img.icon
+{
+  width:50px;
+  height:50px;
+  top:18px;
+  position:absolute;
+  border-radius:25px;
+  border:1px solid rgb(200,200,200);
+}
+
+#transactions div.challenge label.icon_label
+{
+  top:73%; font-size:12px; font-family:AvenirNext-Regular; color:rgb(29,29,29);  text-align:center;
+ width:200%;
+}
+
+#transactions div.challenge label.icon_label.selected
+{
+  color:rgb(153,221,221);
+}
+#transactions div.challenge img.icon.selected
+{
+  border:1px solid rgb(153,221,221);
+
+}
+#transactions .challenge
+{
+  overflow:hidden; position:absolute;
+  width:84px;height:100%;
+}
+
+.scroll-bar-indicator
+{
+  display:none;
+}
+
+.scroll-view.scroll-x
+{
+  overflow-x:hidden;
+}
+#transaction_list_in_transactions_page *
+{
+  color:rgb(29,29,29);
+  font-family:AvenirNext-Regular;
+  font-size:13px;
+  line-height:56px;
+}
+
+#transaction_list_in_transactions_page ion-item
+{
+  height:56px;
+}
+#transaction_list_in_transactions_page span#name
+{
+  float:left;
+  margin-left:14px;
+  position:relative !important;
+}
+#transaction_list_in_transactions_page span#price
+{
+  float:right;
+  margin-right:14px;
+  position:relative !important;
+}
+
+#transaction_list_in_transactions_page ion-item img
+{
+  margin-left:17px;
+  width:26px; height:26px;
+  position:relative !important;
+  float:left;
+  left:0px;
+}
+
+#transactions ion-item .item-content, #challenge_detail ion-item .item-content
+{
+  min-height:56px;
+  padding:0px;
+}
+
+#transactions ion-item .item-content *, #transactions ion-item.item_content_title_1
+{
+  font-family:AvenirNext-Regular;
+  font-size:13px;
+  letter-spacing:1px;
+  color:rgb(29,29,29);
+}
+
+
+#transactions ion-list > div.list > div:first-child > ion-item:first-child
+{
+  border-top:0px solid red;
+}
+
+
+
+#adjust_benchmark .scroll
+{
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 2px);
+}
+
+#adjust_benchmark #circle
+{
+  margin-top:1em;
+  width:250px;
+  height:250px;
+  border-radius:50%;
+  border:2px solid rgb(153,213, 221);
+
+}
+.key_cell
+{
+  position:relative;
+  float:left;
+  height:20%;
+  width:33.333%;
+  color:white;
+  font-size:40px;
+  text-align:center;
+
+  line-height:60px;
+}
+@media screen and (max-width:321px) {
+  #adjust_benchmark #spend_less_than
+  {
+    font-size:17px;
+  }
+  #adjust_benchmark #dollar
+  {
+    font-size:40px;
+    margin-top:20px;
+    line-height:50px;
+  }
+  #adjust_benchmark #editTextField_Dollar
+  {
+    font-size:40px;
+  }
+  #adjust_benchmark #hr
+  {
+    width:70%;
+    margin-top:40px;
+
+  }
+  #adjust_benchmark #period {font-size:15px; margin-top:20px;}
+
+
+  #adjust_benchmark .adjust_benchmark_button
+  {
+    -ms-transform: scale(0.6);
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    -o-transform: scale(0.6);
+    transform: scale(0.6);
+    font-size:12px;
+    font-family:AvenirNext-Regular;
+  }
+}
+#adjust_benchmark .adjust_benchmark_button *
+{
+  font-size:12px;
+  font-family:AvenirNext-Regular;
+}
+#adjust_benchmark .adjust_benchmark_button > div:first-child
+{
+  margin-bottom:5px;
+}
+@media screen and (min-width:322px) and (max-width:569px) {
+  #adjust_benchmark .adjust_benchmark_button
+  {
+    /*-ms-transform: scale(0.8);*/
+    /*-webkit-transform: scale(0.8);*/
+    /*-moz-transform: scale(0.8);*/
+    /*-o-transform: scale(0.8);*/
+    /*transform: scale(0.8);*/
+    font-size:12px;
+    font-family:AvenirNext-Regular;
+  }
+  #adjust_benchmark #spend_less_than
+  {
+    font-size:19px;
+  }
+  #adjust_benchmark #dollar
+  {
+    font-size:50px;
+    margin-top:10px;
+    line-height:50px;
+  }
+  #adjust_benchmark #editTextField_Dollar
+  {
+    font-size:50px;
+  }
+  #adjust_benchmark #hr
+  {
+    width:70%;
+    margin-top:10px;
+  }
+  #adjust_benchmark #period {font-size:16px; margin-top:20px; margin-bottom:20px;}
+
+  #adjust_benchmark #keyboard
+  {
+    height:300px;
+  }
+}
+
+@media screen and (min-width:569px) and (max-width:768px)
+{
+  #adjust_benchmark #spend_less_than
+  {
+    font-size:21px;
+  }
+  #adjust_benchmark #dollar
+  {
+    font-size:60px;
+    margin-top:30px;
+  }
+  #adjust_benchmark #editTextField_Dollar
+  {
+    font-size:60px;
+  }
+  #adjust_benchmark #hr
+  {
+    width:70%;
+    margin-top:30px;
+
+  }
+  #adjust_benchmark #period
+  {
+    font-size:190px;
+    margin-bottom:50px;
+  }
+
+
+  #adjust_benchmark #keyboard
+  {
+    height:200px;
+  }
+}
+
+@media screen and (min-width:769px)
+{
+  #adjust_benchmark #spend_less_than
+  {
+    font-size:23px;
+  }
+  #adjust_benchmark #dollar
+  {
+    font-size:70px;
+    margin-top:50px;
+  }
+  #adjust_benchmark #editTextField_Dollar
+  {
+    font-size:70px;
+  }
+  #adjust_benchmark #hr
+  {
+    width:70%;
+    margin-top:50px;
+
+  }
+  #adjust_benchmark #period
+  {
+    font-size:20px;
+    margin-top:40px;
+    margin-bottom:70px;
+  }
+
+}
+#adjust_benchmark img.emoticon
+{
+  width:50px;
+}
+
+
+#adjust_benchmark #keyboard
+{
+  position:absolute;
+  bottom:0px;
+  width:100%;
+  left:0px;
+  background:rgb(153,213,221);
+}
+
+#transaction_detail_edit_page #transaction_keyboard
+{
+  position:absolute;
+  bottom:0px;
+  width:100%;
+  left:0px;
+  background:rgb(153,213,221);
+  height : 300px;
+}
+
+
+#adjust_benchmark *
+{
+  font-family:AvenirNext-Regular;
+}
+
+#adjust_benchmark button#letsdoit:disabled
+{
+  background:rgb(226,226,226) !important;
+}
+
+
+
+#transaction_detail_page .form_item
+{
+  margin-top:30px;
+  border-bottom:1px solid #dddddd;
+  margin-left:25px;
+  width:calc(100% - 50px);
+}
+
+#transaction_detail_page .form_item div.label
+{
+  font-size:11px;
+  width:100%;
+  text-align:left;
+  letter-spacing:1.2px;
+  font-family:AvenirNext-Regular;
+  color:rgb(29,29,29);
+  opacity:0.5;
+}
+
+#transaction_detail_page .form_item input
+{
+  border:0px solid white;
+  font-size:15px;
+  width:100%;
+
+  font-family:AvenirNext-Regular;
+  color:rgb(50,50,50);
+}
+
+
+
+#transaction_detail_edit_page .form_item
+{
+  margin-top:30px;
+  border-bottom:1px solid #dddddd;
+  margin-left:25px;
+  width:calc(100% - 50px);
+}
+
+#transaction_detail_edit_page .form_item div.label
+{
+  font-size:11px;
+  width:100%;
+  text-align:left;
+  letter-spacing: 1.2px;
+
+  font-family:AvenirNext-Regular;
+  color:rgb(29,29,29);
+  opacity:0.5;
+}
+
+#transaction_detail_edit_page .form_item input
+{
+  border:0px solid white;
+  font-size:15px;
+  width:100%;
+
+  font-family:AvenirNext-Regular;
+  color:rgb(50,50,50);
+}
+
+
+
+#linkbankaccount_page *
+{
+  font-family:AvenirNext-Medium;
+}
+
+
+#linkbankaccount_page .button
+{
+  background-color:rgb(153,213,221);
+  border-radius: 0px;
+  color:white;
+  font-size: 15px;
+  width:100%;
+}
+
+
+#linkbankaccount_page .create_account
+{
+  background:none;
+  border:0px solid red;
+  color:rgb(153,213,221);
+  font-size:14px;
+}
+
+#linkbankaccount_page a {
+  color:#777777;
+
+}
+
+#linkbankaccount_page .white_content
+{
+  padding:16px;
+  font-size:14px; font-family:AvenirNext-Regular;
+  line-height:21px;
+  color:rgb(29,29,38);
+}
+
+#linkbankaccount_page  #bank_list > li
+{
+  line-height:26px;
+  color:rgb(29,29,29);
+  padding:14px;
+  border-bottom:1px solid #dddddd;
+  font-size:13.5px; font-family:AvenirNext-Regular;
+}
+#linkbankaccount_page .circle *
+{
+  width:100%; height:100%;
+}
+#linkbankaccount_page .circle
+{
+  width:26px; height:26px; border-radius:13px; background-color:rgb(153,213,221);
+  float:left;
+  margin-left:4px;
+  margin-right:14px;
+}
+#linkbankaccount_page #bank_list > li > div:not(.circle)
+{
+  float:right;
+}
+#linkbankaccount_page #bank_list span
+{
+  line-height:30px;
+  height:30px;
+  float:right;
+  font-size:10px;
+  font-family:AvenirNext-Medium;
+  letter-spacing:0.6px;
+  color:rgb(250,106,106);
+  margin-right:6px;
+}
+
+#linkbankaccount_page #bank_list li > div:not(.circle) > img
+{
+  height:30px;
+  float:right;
+}
+
+#linkbankaccount_page .header
+{
+  width:100%; height:50px; background:rgb(230,230,230); line-height:50px; padding-left:16px; font-size:13px; letter-spacing:1px;
+  font-family:AvenirNext-Regular;
+}
+
+#linkbankaccount_page ion-spinner svg {
+  width:18px;
+  height:28px;
+}
+
+img[src='img/assets/checkmark_failed.png']
+{
+  height:23px !important;
+  width:23px !important;
+}
+
+img[src='img/assets/checkmark.png']
+{
+
+
+
+  margin-top:5px;
+  height:16px !important;
+  width:20px !important;
+}
+
+
+#account_page *
+{
+  font-family:AvenirNext-Regular;
+  font-size:13px;
+}
+
+
+input[readonly]
+{
+  background-color:white !important;
+}
+
+
+#jssor_2 img.selected
+{
+
+  border:2px solid rgb(153,221,221);
+}
+
+
+div.jr-crop div.jr-crop-footer button{
+width: auto !Important;
+}
+
+
+
+
+#welcome_screen input[type=text],#welcome_screen  input[type=password],#welcome_screen  input[type=email]
+{
+  font-size:18px;
+  text-align:center;
+}
+
+#welcome_screen .centerx
+{
+  position:relative; left:50%;
+  transform:translateX(-50%);
+  -moz-transform:translateX(-50%);
+  -ms-transform:translateX(-50%);
+  -webkit-transform:translateX(-50%);
+  -o-transform:translateX(-50%);
+}
+#welcome_screen label.item-input
+{
+  margin-left:40px;
+  margin-right:40px;
+  padding:20px;
+  padding-bottom:5px;
+  border-left-style:none;
+  border-right-style:none;
+  border-top-style:none;
+}
+
+#welcome_screen label.item-input span
+{
+  padding:20px;
+  padding-bottom:5px;
+  color:#999999;
+  font-size:13px;
+}
+#welcome_screen .button_area, .forgot_signup_area
+{
+  padding-top:00px;
+  margin:0px 40px;
+}
+
+#welcome_screen .button
+{
+  background-color:rgb(153,213,221);
+  border-radius: 0px;
+  color:white;
+  font-size: 15px;
+  width:100%;
+}
+
+#welcome_screen .forgot_password
+{
+  background:none;
+  border:0px solid red;
+  color:#999;
+  font-size:14px;
+}
+
+
+#welcome_screen .create_account
+{
+  background:none;
+  border:0px solid red;
+  color:rgb(153,213,221);
+  font-size:14px;
+}
+
+#welcome_screen .hi_name
+{
+  font-size:19px;
+  color:rgb(153,213,221);
+
+}
+#welcome_screen .welcome
+{
+  font-size:19px;
+  color:black;
+  padding-top:10px;
+}
+#welcome_screen .full_screen
+{
+  width:100%;
+}
+
+#back_button
+{
+  color:#60c1cc !important;;
+}
+
+.no-transform
+{
+  transform:translate(0, 0%) !Important;
+  -moz-transform:translate(0%, 0%) !Important;
+  -ms-transform:translate(0%, 0%) !Important;
+  -webkit-transform:translate(0%, 0%) !Important;
+  -o-transform:translate(0px, 0px) !Important;
+}
+
+
+.goal_page_form_label
+{
+  font-family:AvenirNext-Regular;
+  font-size:11px;
+  color:rgb(29,29,38);
+  opacity:0.5;
+  letter-spacing:1px;
+  height:12px;
+}
+
+.goal_page_form_text
+{
+  font-family:AvenirNext-Regular;
+  font-size:15px;
+  color:rgb(29,29,38);
+  opacity:1;
+  letter-spacing:0.2px;
+  padding-bottom:5px;
+
+  margin-top:6px;
+}
+
+
+.goal_page_form_text input
+{
+  padding:0;
+  margin:0px;
+
+}
+.goal_page_form_group
+{
+  margin:19px 29px 0px 29px;
+  border:0px solid rgb(200,200,200);
+  border-bottom-width:1px;
+}
+
+.goal_page_form_group:first-child
+{
+  margin-top:36px;
+
+}
+
+.goal_page_form_text > input[type=date]
+{
+  background:none;
+  width:200px;
+}
+
+
+
+.buttonClass_CreateGoal
+{
+  font-family:AvenirNext-Medium !important; font-size:12px  !important; color:#60C1CC  !important; letter-spacing:1px  !important;
+}
+
+.action-sheet-group.action-sheet-cancel > button.button
+{
+  font-family:AvenirNext-Regular  !important; font-size:12px  !important; color:rgb(200,200,200)  !important;  letter-spacing:1px  !important;
+}
+
+
+
+
+#goals_list_in_pluto_savings :not(.selected) div
+{
+  opacity:0.5;
+}
+
+#goals_list_in_pluto_savings .selected > div
+{
+  opacity: 1;
+}
+
+
+#assign_button_in_pluto_savings
+{
+  background-color:rgb(122,203, 215);
+  border-radius:4px;
+  border:0 solid white;
+  color:white;
+  font-family: AvenirNext-Medium; font-size:15px;
+}
+
+
+#assign_button_in_pluto_savings:disabled
+{
+  background-color:rgb(219,219,222);
+}

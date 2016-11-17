@@ -1,0 +1,45 @@
+<ion-view id = 'transaction_detail_page'>
+    <ion-header-bar style = ''>
+        <div class = 'buttons'>
+            <button id = 'back_button' class = 'create_account'  style = 'font-size:16px; border:0px solid white; background:none; color:#60c1cc;'>Back</button>
+        </div>
+        <div class = 'title'>
+            Transactions
+        </div>
+        <div class = 'buttons'>
+            <button id = 'delete_button' class = 'create_account'  style = 'font-size:16px; border:0px solid white; background:none; color:rgb(153,213,221)'>Delete</button>
+        </div>
+    </ion-header-bar>
+    <ion-content scroll = 'true' has-bouncing='false'>
+
+        <img class = 'text_line_absolute centerx_area' style = 'left:50%; top:40px; width:100px; height:100px; border-radius:50px; border:2px solid rgb(230,230,230);'
+                ng-src = '{{getCategoryIcon(transaction.category[0])}}'>
+
+        <label class = 'text_line_absolute centerx_area'
+               style = "font-family: AvenirNext-Medium; font-size:30px; left:50%; top:160px; color:rgb(29,29,29);"><span ng-bind = 'price'></span></label>
+
+        <div class = 'text_line_absolute' style = 'top:210px; width:100%; left:0px'>
+            <div class="form_item">
+                <div class = 'label'>MERCHANT</div>
+                <input type="text" placeholder="" id = 'where' readonly>
+            </div>
+            <div  class="form_item">
+                <div class = 'label'>WHEN</div>
+                <input type="text" placeholder="" id = 'when' readonly >
+            </div>
+            <div  class="form_item">
+                <div class = 'label'>ACCOUNT</div>
+                <input type="text" placeholder="" id = 'account' readonly >
+            </div>
+        </div>
+
+
+        <button style = 'position:absolute;
+                            top:545px; height:60px; width:100%;
+                            font-size:12px; font-family:AvenirNext-Regular; background:#eee;
+                            color:rgb(29,29,29); font-weight:normal; letter-spacing:1px'
+                class = 'bottom_button' id = 'edit_this_transaction'>
+            EDIT
+        </button>
+    </ion-content>
+</ion-view>

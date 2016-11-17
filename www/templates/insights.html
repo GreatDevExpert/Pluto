@@ -1,0 +1,24 @@
+<ion-view id = 'insights' title = "Insights">
+	<ion-header-bar style = ''>
+
+		<div class = 'buttons' style = ''>
+			<button id = 'back_button' class = 'create_account'  style = 'font-size:16px; font-family:AvenirNext-Medium; border:0px solid white; background:none; color:#60c1cc;'>Back</button>
+		</div>
+		<div class = 'title' style = 'font-family:AvenirNext-Medium'>
+			Insights
+		</div>
+	</ion-header-bar>
+
+
+	<ion-content scroll = 'true' has-bouncing='false' style = 'background-color:rgb(153,213,221)'>
+		<div style = 'width:100%; left:0px; margin-top: 25px; color:white; font-family:AvenirNext-Regular; font-size:12px; letter-spacing:0.2px; text-align:center;' id = 'loadedTime'>
+		</div>
+
+		<div ng-repeat = "item in items" style = 'margin-left:17px; margin-right:17px; max-width:100%; margin-top: 17px; border-radius:5px; padding:14px; background-color: white'>
+			<div style = 'font-family:AvenirNext-Medium; font-size:11px; letter-spacing:0.5px; color:rgb(153,213,221); '>{{item.type}}</div>
+			<div style = 'font-family:AvenirNext-Regular; font-size:13px; letter-spacing:0.2px; color:rgb(29,29,39); margin-top:8px;'>{{item.title}}</div>
+		</div>
+	</ion-content>
+
+
+</ion-view>

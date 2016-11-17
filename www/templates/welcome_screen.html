@@ -1,0 +1,33 @@
+
+
+<ion-view style = 'height:100%;' id = 'welcome_screen'>
+<ion-content scroll = 'false'>
+
+        <div style = 'width:100%; position:relative; overflow:hidden; height:calc(100% - 60px); flex:2; left:0px; top:0px; background-color:white; '>
+            <div style = 'width:60%; position:absolute; left:50%; top:50%; transform:translate(-50%, -50%);
+                                    -ms-transform:translate(-50%, -50%);
+                                    -webkit-transform:translate(-50%, -50%);
+                                    -moz-transform:translate(-50%, -50%);
+                                    -o-transform:translate(-50%, -50%); font-family:AvenirNext-Regular;' align = 'center'>
+                <div class = 'hi_name'>Hi, {{first_name}}</div>
+                <div class = 'welcome'>Welcome to Pluto!</div>
+                <div style = 'padding-top:20px; width:100px; padding-bottom:20px'><hr></div>
+                <div align = 'center' >We're here to help you save <br>for the things that matter to you.<br>First, let's start with your goal.</div>
+            </div>
+        </div>
+        <div style = 'width:100%; overflow:hidden; left:0px; background-color:white'>
+
+            <div class = 'full_screen'>
+
+                    <!--<button class = 'button'  onclick = 'window.location.href = "#/linkbankaccount?parent=welcome"' style = 'width:100%; height:50px'>NEXT</button> -->
+              <button class = 'button'  onclick = 'window.location.href = "#/create_goal"' style = 'width:100%; height:60px; font-family:AvenirNext-Medium; font-size:13px; letter-spacing:1px; color:white'>NEXT</button>
+
+            </div>
+
+
+        </div>
+
+</ion-content>
+</ion-view>
+
+

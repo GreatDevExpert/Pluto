@@ -1,0 +1,152 @@
+<head>
+    <style type = 'text/css'>
+        #signup_page *
+        {
+            font-family:'Helvetica';
+        }
+        
+        #signup_page input[type=text],#signup_page  input[type=password],#signup_page  input[type=email]
+        {
+            font-size:18px;
+            text-align:center;
+        }
+
+        #signup_page .centerx
+        {
+            position:relative; left:50%; 
+            transform:translateX(-50%);
+            -moz-transform:translateX(-50%);
+            -o-transform:translateX(-50%);
+            -webkit-transform:translateX(-50%);
+            -ms-transform:translateX(-50%);
+        }
+        #signup_page label.item-input
+        {
+
+            margin-left:20px;
+            margin-right:20px;
+            margin-top:0px;
+            margin-bottom:0px;
+            padding:0px;
+            border-left-style:none;
+            border-right-style:none;
+            border-top-style:none;
+        }
+
+        #signup_page label.item-input span
+        {
+            padding:20px;
+            padding-bottom:5px;
+            color:#999999;
+            font-size:13px;
+        }
+        #signup_page .button_area
+        {
+            padding-top:48px;
+            margin:0px 20px;
+        }
+        #signup_page .forgot_signup_area
+        {
+            padding-top:20px;
+            margin:0px 20px;
+        }
+        #signup_page .button
+        {
+            background-color:#9AD7DB;
+            border-radius: 0px;
+            color:white;
+            font-size: 15px;
+            width:100%;
+        }
+
+        #signup_page .forgot_password
+        {
+            background:none;
+            border:0px solid red;
+            color:#999;
+            font-size:14px;
+        }
+
+
+        #signup_page  .create_account
+        {
+            background:none;
+            border:0px solid red;
+            color:rgb(153,213,221);
+            font-size:14px;
+        }
+
+        #signup_page .left_area
+        {
+            float:left;      
+
+            margin-left: -10px;
+        }
+
+        #signup_page .left_area *, #signup_page  .right_area *
+        {
+            font-size:12px;      
+        }
+
+        #signup_page .right_area
+        {
+            float:right;
+            margin-right: -10px;
+        }
+    </style>
+</head>
+<body>
+    <ion-view id = 'signup_page'>
+        <ion-content has-bouncing='false'>
+            
+            <div style = 'width:100%; position:relative; overflow:hidden;  left:0px; top:0px; background-color:rgb(153,213,221); height:181px' id = 'logo_area_in_signup_page'>
+                <img src = 'img/assets/logo.png' style = 'position:absolute; left:50%; top:50%;  height:50%; transform:translate(-50%, -50%);
+                                -ms-transform:translate(-50%, -50%);
+                                -webkit-transform:translate(-50%, -50%);
+                                -moz-transform:translate(-50%, -50%);
+                                -o-transform:translate(-50%, -50%);'>
+            </div> 
+            <div style = 'width:100%; overflow:hidden; left:0px; background-color:white' id = 'signup_area_in_login_page'>
+                    
+
+                <div style = 'padding-top:20px'>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label centerx" align='center'  style = 'font-family: AvenirNext-Regular; font-size:13px'>First name</span>
+                        <input type="text" placeholder="" id = 'first_name'  style = 'font-family:AvenirNext-Regular; font-size:15px; padding-bottom:17px'>
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label centerx" align='center'  style = 'font-family: AvenirNext-Regular; font-size:13px'>Last name</span>
+                        <input type="text" placeholder="" id = 'last_name'  style = 'font-family:AvenirNext-Regular; font-size:15px; padding-bottom:17px' >
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label centerx" align='center'  style = 'font-family: AvenirNext-Regular; font-size:13px'>Email</span>
+                        <input type="email" placeholder="" id = 'signup_email' style = 'font-family:AvenirNext-Regular; font-size:15px; padding-bottom:17px'>
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label centerx"  align='center'  style = 'font-family: AvenirNext-Regular; font-size:13px'>Password</span>
+                        <input type="password" placeholder="" id = 'signup_password'  style = 'font-family:AvenirNext-Regular; font-size:15px; padding-bottom:17px'>
+                    </label>
+                     
+                </div>
+
+                <div class = 'button_area'>
+                    <button class = 'button' id = 'signup' type = 'submit' style = 'font-family: AvenirNext-Regular;letter-spacing:0.87px;  font-size:13px'>CREATE ACCOUNT</button>
+                </div>
+
+                <div class = 'forgot_signup_area'>
+                    <div class = 'left_area'>
+                        <button class = 'forgot_password'  onclick = 'window.location.href = "#/forgotpassword"' style = 'font-family: AvenirNext-Medium; letter-spacing:0.87px; font-size:12px'>FORGOT PASSWORD?</button>
+                    </div>
+                    <div  class = 'right_area'>
+                        <button class = 'create_account' onclick = 'window.location.href = "#/login"' style = 'font-family: AvenirNext-Medium; font-size:12px;letter-spacing:0.87px; color:#9AD7DB;'>SIGN IN</button>
+                    </div>
+                </div>
+
+                <div style = 'padding-top:30px'>
+                </div>
+            </div>  
+        </ion-content> 
+        
+    </ion-view>
+
+</body>

@@ -1,0 +1,70 @@
+<ion-view id = 'account_page' title = "Accounts">
+
+	<ion-nav-buttons side="left">
+		<button menu-toggle="left" class="button button-icon icon" style = 'color:#60c1cc'>Menu</button>
+	</ion-nav-buttons>
+	<ion-nav-buttons side="right">
+		<button class="button button-icon icon" style = 'color:#60c1cc' ng-click = 'gotoInsights();'>Insight</button>
+	</ion-nav-buttons>
+	<ion-content scroll = 'true' has-bouncing='false' class = 'has-header'>
+		<div id = 'pluto_accounts_detail' style = 'width:100%; height:56px; position:relative; background:#eee; font-family:AvenirNext-Medium; line-height:56px; padding-left:20px; font-size:14px; color:rgb(150,150,150);'>
+			PLUTO ACCOUNTS
+		</div>
+		<ion-list >
+
+
+
+			<ion-item class="item-thumbnail-left" style = 'min-height:56px; padding-top:0px; padding-bottom:0px; padding-left:48px;' ng-click = 'goPlutoLink()'>
+
+				<div  class = 'center_area' style = 'height: 26px;
+							float: left; position: absolute; border-radius:13px; background:rgb(155,222,222); left: 26px;width: 26px; '></div>
+				<div   style = 'float:left; color:rgb(50,50,50); height:56px; line-height:56px;'>Pluto Savings</div>
+
+				<div ng-bind = 'totalSum' style = '
+						float:right; margin-right:1px; height:56px; line-height:56px; font-family:AvenirNext-Medium; color:rgb(96,193,204);'></div>
+
+
+			</ion-item>
+
+
+		</ion-list>
+		<div id = 'linked_accounts' style = 'width:100%; height:56px; position:relative; background:#eee; font-family:AvenirNext-Medium; line-height:56px; padding-left:20px; font-size:14px; color:rgb(150,150,150);'>
+			LINKED ACCOUNTS
+		</div>
+		<ion-list >
+
+
+
+			<ion-item class="item-thumbnail-left" style = 'min-height:56px; padding-top:0px; padding-bottom:0px; padding-left:48px;' ng-repeat = "bank in allBanks track by $index" ng-click = 'goLink($index)'>
+
+				<div  class = 'center_area' style = 'height: 26px;
+							float: left; position: absolute; border-radius:13px; background:rgb(155,222,222); left: 26px;width: 26px; '></div>
+				<div  ng-bind = 'bank.name' style = 'float:left; color:rgb(50,50,50); height:56px; line-height:56px;'></div>
+
+				<div ng-bind = 'bank.totalAmount' style = '
+						float:right; margin-right:1px; height:56px; line-height:56px; font-family:AvenirNext-Medium; color:rgb(96,193,204);'></div>
+
+
+			</ion-item>
+
+
+		</ion-list>
+		<div id = 'more_bank' class = 'recent_transaction' style = 'width:100%; height:56px; position:relative;'>
+			<img src = 'img/assets/more.png'  class = 'center_area' style = 'height: 26px;
+							float: left;
+							position: absolute;
+							left: 26px;
+							width: 26px; '>
+			<div  style = 'top:50%; float:left; line-height:56px;margin-left:50px;'>
+				Link another account
+			</div>
+
+			<img src = 'img/assets/right_arrow1.png'  class = 'center_area' style = 'height: 24px;
+							float: left;
+							left:calc(100% - 30px);
+							position: absolute;
+
+							width: 18px; '>
+		</div>
+	</ion-content>
+</ion-view>

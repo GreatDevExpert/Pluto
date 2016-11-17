@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html ng-app="Pluto">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' *">
+    <link href="js/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="lib/jr-crop/dist/jr-crop.css" rel="stylesheet">
+    <script src="js/ionic.bundle.js"></script>
+    <script src="js/ngCordova/dist/ng-cordova.min.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/alert.js"></script>
+    <script src="lib/angular-route/angular-route.min.js"></script>
+    <script src="lib/sprintf/src/sprintf.js"></script>
+    <script src="lib/jr-crop/dist/jr-crop.js"></script>
+    <script src="js/custom_functions.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/appControllersConfig.js"></script>
+    <script src="js/controllers/AdjustBenchmarkController.js"></script>
+    <script src="js/controllers/AmexController.js"></script>
+    <script src="js/controllers/ChallengeDetailController.js"></script>
+    <script src="js/controllers/CreateGoalController.js"></script>
+    <script src="js/controllers/EasyControllers.js"></script>
+    <script src="js/controllers/GoalListController.js"></script>
+    <script src="js/controllers/LinkBankAccountController.js"></script>
+    <script src="js/controllers/LoginController.js"></script>
+    <script src="js/controllers/MenuController.js"></script>
+    <script src="js/controllers/PickChallengeController.js"></script>
+    <script src="js/controllers/SignUpController.js"></script>
+    <script src="js/controllers/GoalEditController.js"></script>
+    <script src="js/controllers/TransactionController.js"></script>
+    <script src="js/controllers/AccountDetailPlutoController.js"></script>
+    <script src="js/controllers/TransactionDetailController.js"></script>
+    <script src="js/controllers/TransactionDetailEditController.js"></script>
+    <script src="js/controllers/AccountController.js"></script>
+    <script src="js/controllers/AccountDetailController.js"></script>
+    <script src="js/controllers/InsightsController.js"></script>
+    <script src="lib/ionic-native-transitions/dist/ionic-native-transitions.js"></script>
+    <script src="lib/angular-plaid-link/src/angular-plaid-link.js"></script>
+    <script src="lib/ion-numeric-keyboard.js"></script>
+    <style type = 'text/css'>
+      @font-face {
+        font-family: hanzipen;
+        src: url("fonts/hanzipen.ttf") format('truetype');
+      }
+    </style>
+    <script src="lib/ionic-platform-web-client/dist/ionic.io.bundle.min.js"></script>
+  </head>
+
+  <body>
+    <div style="height:calc(100% - 2px)">
+      <ion-nav-view animation="slide-left-right"></ion-nav-view>
+    </div>
+    <div style = 'z-index:99999999; position:fixed; left:0; top:0; width:100%; height:100%; display:none' id = 'tutorial_challenge'>
+      <div style = 'position:absolute; left:0; top:0; width:100%; height:100%; background-color:rgb(51,51,51); opacity:0.8'></div>
+
+      <div class = 'center_area' style = 'top:150px'>
+        <img src = 'img/assets/tutorial_drag.png' style = 'width:37px; height:48px'>
+      </div>
+      <div class = 'center_area' style = 'top:190px; width:100%; text-align:center; font-family:hanzipen; font-size:16.5px; letter-spacing:0.3px; color:white'>
+        Swipe left or right to see other challenges
+      </div>
+
+      <div class = 'center_area' style = 'top:333px; '>
+        <img src = 'img/assets/tutorial_click.png' style = 'width:32px; height:48px'>
+      </div>
+      <div class = 'center_area' style = 'top:370px; width:100%; text-align:center; font-family:hanzipen; font-size:16.5px; letter-spacing:0.3px; color:white'>
+        Tap to see challenge progress detail
+      </div>
+
+      <button style = 'position:absolute; border:0px solid white; bottom:0px; left:0; height:50px; width:100%; background-color:rgb(153,213,221); color:white; font-family:AvenirNext-Medium; font-size:13px; letter-spacing:1.3px;'
+              onclick = 'document.getElementById("tutorial_challenge").style.display = "none";'>
+        GOT IT
+      </button>
+    </div>
+
+
+
+    <div style = 'z-index:99999999; position:fixed; left:0; top:0; width:100%; height:100%; display:none' id = 'tutorial_goal'>
+      <div style = 'position:absolute; left:0; top:0; width:100%; height:100%; background-color:rgb(51,51,51); opacity:0.8'></div>
+
+      <div class = 'center_area' style = 'top:240px'>
+        <img src = 'img/assets/tutorial_click.png' style = 'width:32px; height:48px'>
+      </div>
+      <div class = 'center_area' style = 'top:290px; width:100%; text-align:center; font-family:hanzipen; font-size:16.5px; letter-spacing:0.3px; color:white'>
+        Tap on each card to see detail &amp; progress
+      </div>
+
+      <button style = 'position:absolute; border:0px solid white; bottom:0px; left:0; height:50px; width:100%; background-color:rgb(153,213,221); color:white; font-family:AvenirNext-Medium; font-size:13px; letter-spacing:1.3px;'
+              onclick = 'document.getElementById("tutorial_goal").style.display = "none";'>
+        GOT IT
+      </button>
+    </div>
+
+
+    <div style = 'z-index:99999999; position:fixed; left:0; top:0; width:100%; height:100%; display:none' id = 'tutorial_transaction'>
+      <div style = 'position:absolute; left:0; top:0; width:100%; height:100%; background-color:rgb(51,51,51); opacity:0.8'></div>
+
+      <div class = '' style = 'position:absolute;top:101px; left:117px;'>
+        <img src = 'img/assets/tutorial_click.png' style = 'width:32px; height:48px'>
+      </div>
+      <div style = 'position:absolute;top:165px; left:54px; width:100%; text-align:center; font-family:hanzipen; font-size:16.5px; letter-spacing:0.3px; color:white'>
+        Tap on icons to see transactions <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in different categories
+      </div>
+      <div class = 'center_area' style = 'top:355px; '>
+        <img src = 'img/assets/tutorial_click.png' style = 'width:32px; height:48px; margin-right:20px'>
+        <img src = 'img/assets/tutorial_left_drag.png' style = 'width:32px; height:48px'>
+      </div>
+      <div style = 'position:absolute; top:410px; left:0px; width:100%; text-align:center; font-family:hanzipen; font-size:16.5px; letter-spacing:0.3px; color:white'>
+        Tap to see transaction detail <br>or<br>swipe left to edit or delete
+      </div>
+
+      <button style = 'position:absolute; border:0px solid white; bottom:0px; left:0; height:50px; width:100%; background-color:rgb(153,213,221); color:white; font-family: AvenirNext-Medium; font-size:13px; letter-spacing:1.3px;'
+              onclick = 'document.getElementById("tutorial_transaction").style.display = "none";'>
+        GOT IT
+      </button>
+    </div>
+
+    <div style = 'z-index:99999999; position:fixed; left:0; top:0; width:100%; height:100%; display:none' id = 'tutorial_account'>
+      <div style = 'position:absolute; left:0; top:0; width:100%; height:100%; background-color:rgb(51,51,51); opacity:0.8'></div>
+
+      <div class = '' style = 'position:absolute;top:36px; right:25px;'>
+        <img src = 'img/assets/tutorial_click.png' style = 'width:32px; height:48px'>
+      </div>
+      <div style = 'position:absolute;top:61px; right:74px; width:100%; text-align:right; font-family:hanzipen; font-size:16.5px; letter-spacing:0.3px; color:white'>
+        Tap to see real-time insights
+      </div>
+      <div style = 'top:260px; left:60px; position:absolute'>
+        <img src = 'img/assets/tutorial_click.png' style = 'width:32px; height:48px; margin-right:10px;'>
+        <div style = 'display:inline; width:100%; text-align:left; font-family:hanzipen; font-size:16.5px; line-height:20px; letter-spacing:0.3px; color:white'>
+          Tap to see account details
+        </div>
+      </div>
+
+
+      <button style = 'position:absolute; border:0px solid white; bottom:0px; left:0; height:50px; width:100%; background-color:rgb(153,213,221); color:white; font-family:AvenirNext-Medium; font-size:13px; letter-spacing:1.3px;'
+              onclick = 'document.getElementById("tutorial_account").style.display = "none";'>
+        GOT IT
+      </button>
+    </div>
+
+
+    <div style = 'z-index:99999999; position:fixed; left:0; top:0; width:100%; height:100%; display:none' id = 'tutorial_pluto_assign'>
+      <div style = 'position:absolute; left:0; top:0; width:100%; height:100%; background-color:rgb(51,51,51); opacity:0.8'></div>
+
+      <div class = '' style = 'position:absolute;top:280px; left:51%; transform:translateX(-50%); -webkit-transform:translateX(-50%);'>
+        <img src = 'img/assets/tutorial_click.png' style = 'width:32px; height:48px'>
+      </div>
+      <div style = 'position:absolute;top:331px;  width:100%; left:0; text-align:center; font-family:hanzipen; font-size:16.5px; letter-spacing:0.3px; color:white'>
+        Tap to assign money to goals
+      </div>
+
+      <button style = 'position:absolute; border:0px solid white; bottom:0px; left:0; height:50px; width:100%; background-color:rgb(153,213,221); color:white; font-family:AvenirNext-Medium; font-size:13px; letter-spacing:1.3px;'
+              onclick = 'document.getElementById("tutorial_pluto_assign").style.display = "none";'>
+        GOT IT
+      </button>
+    </div>
+  </body>
+
+  <script src="lib/jquery/dist/jquery.min.js"></script>
+  <script src="lib/jssor-slider/js/jssor.slider.mini.js"></script>
+  <script src="https://cdn.plaid.com/link/stable/link-initialize.js"></script>
+</html>

@@ -1,0 +1,74 @@
+﻿<ion-view style = 'display:flex; height:100%; flex-direction:column; flex-flow:column;' id = 'pick_challenge'>
+    <ion-header-bar style = ''>
+        <div class = 'buttons'>
+            <button id = 'back_button' class = 'create_account'  style = 'font-size:16px; border:0px solid white; background:none; color:#60c1cc;'>Back</button>
+        </div>
+        <div class = 'title'>
+            Pick Challenge
+        </div>
+    </ion-header-bar>
+    <ion-content scroll = 'false' has-bouncing='false'>
+        <div style = 'position:absolute; left:0px; top:0px; width:100%; height:100%'>
+            <label id = 'title_area' style = 'position:absolute; font-size:15px; width:100%; text-align:center; letter-spacing:0.6px; top:33px; font-family:AvenirNext-Regular; color:rgb(29,29,29)' class = 'center_area'>
+                Recommended Challenges
+            </label>
+            <label id = 'sub_title_area' style = 'position:absolute; font-size:12px; width:100%; text-align:center; top:63px; font-family:AvenirNext-Italic; color:rgb(29,29,29)' class = 'center_area'>
+                1 of 3
+            </label>
+            <label id = 'subtitle_area' style = 'position:absolute; font-style: italic; font-size:15px; top:15%; color:#666666' class = 'center_area'>
+                <span ng-bind = 'selectedIndexText'></span>
+            </label>
+            <div id="jssor_1" class = 'centerx_area' style="position: absolute; top: 104px; left: 50%; width: 100%; height: 50%; overflow:visible">
+                <div id = 'slides' data-u="slides" class = 'full_height'  style="overflow:visible; position: relative; top: 0px; left: 0px; width:100%; height: 100%; ">
+                    <div class = 'full_height slide' data-category = 'Travelsss'>
+
+                    </div>
+                    <div class = 'full_height slide' data-category = 'Travelsss'>
+
+                    </div>
+                    <div class = 'full_height slide' data-category = 'Shops' >
+                        <div class = 'selected'>
+                            <div  class = 'challenge_active_sign'>ACTIVE</div>
+                            <img src = 'img/assets/category_shopping.png' class = 'centerx_area' style = 'top:16%; height:18%' >
+                            <label class = 'center_area' style = 'font-family:AvenirNext-Regular; top:45%; letter-spacing:1px; font-size:13px'>SPEND LESS ON</label>
+                            <label class = 'center_area' style = 'letter-spacing:1.3px; top:53%; font-size:20px; font-family:AvenirNext-Regular; width:100%; text-align:center'>SHOPPING</label>
+                            <div class = 'center_area' style = 'top:66%; height:0px; border:0px solid #555; border-top-width:1px; width:45%'></div>
+                            <label class = 'center_area' style = 'font-family:AvenirNext-Regular;text-align:center; top:80%; width:100%'>Your <span id = 'shops_weekly'></span> average: &nbsp; <span style = 'font-weight:bold; color:rgb(153,213,221);' id = 'shops' class = 'average_value'>-</span></label>
+                        </div>
+                    </div>
+                    <div class = 'full_height slide' data-category = 'Food and Drink'>
+                        <div>
+                            <div  class = 'challenge_active_sign'>ACTIVE</div>
+                            <img src = 'img/assets/category_food_drink.png' class = 'centerx_area' style = 'top:16%; height:18%' data-category = 'Food and Drink'>
+                            <label class = 'center_area' style = 'letter-spacing:1px; font-family:AvenirNext-Regular; top:45%; font-size:13px'>SPEND LESS ON</label>
+                            <label class = 'center_area' style = 'letter-spacing:1.3px; top:53%; font-size:20px; font-family:AvenirNext-Regular; width:100%; text-align:center'>FOOD &amp; DRINKS</label>
+                            <div class = 'center_area' style = 'top:66%; height:0px; border:0px solid #555; border-top-width:1px;  width:45%'></div>
+                            <label class = 'center_area' style = 'font-family:AvenirNext-Regular;text-align:center; top:80%; width:100%'>Your <span id = 'foodanddrink_weekly'></span> average: &nbsp; <span style = 'font-weight:bold; color:rgb(153,213,221);' id = 'foodanddrink' class = 'average_value'>-</span></label>
+                        </div>
+                    </div>
+                    <div class = 'full_height slide' data-category = 'Travel'>
+                        <div>
+                            <div class = 'challenge_active_sign'>ACTIVE</div>
+                            <img src = 'img/assets/category_transportation.png' class = 'centerx_area' style = 'top:16%; height:18%' data-category="Travel">
+                            <label class = 'center_area' style = 'letter-spacing:1px;font-family:AvenirNext-Regular; top:45%; font-size:13px'>SPEND LESS ON</label>
+                            <label class = 'center_area' style = 'letter-spacing:1.3px; top:53%; font-size:20px; font-family:AvenirNext-Regular; width:100%; text-align:center'>TRANSPORTATION</label>
+                            <div class = 'center_area' style = 'top:66%; height:0px; border:0px solid #555; border-top-width:1px; width:45%'></div>
+                            <label class = 'center_area' style = 'text-align:center; top:80%; width:100%;font-family:AvenirNext-Regular'>Your <span id = 'transportation_weekly'></span> average: &nbsp; <span style = 'font-weight:bold; color:rgb(153,213,221);' id = 'transportation' class = 'average_value'>-</span></label>
+                        </div>
+                    </div>
+                    <div class = 'full_height slide' data-category = 'Travelsss'>
+
+                    </div>
+                    <div class = 'full_height slide' data-category = 'Travelsss'>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class = 'center_area' style = 'top:80%'><a href = '#' style = 'color:#777777'>How does it work?</a></div>
+        </div>
+        <button style ='font-size:13px; font-family:AvenirNext-Medium; color:white; font-weight:normal; letter-spacing:1px' class = 'bottom_button' id = 'goto_adjust_benchmark'>
+            NEXT
+        </button>
+    </ion-content>
+</ion-view>
